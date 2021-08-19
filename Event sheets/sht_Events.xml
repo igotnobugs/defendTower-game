@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_Events</name>
+    <events>
+        <comment>Message Box / Story goes here</comment>
+        <variable constant="0" name="dialogueFinished" sid="788242631368038" static="0" type="number">1</variable>
+        <variable constant="0" name="eventProgress" sid="199891871131307" static="0" type="number">0</variable>
+        <variable constant="0" name="keyHeld" sid="701710851163966" static="0" type="number">0</variable>
+        <variable constant="0" name="nightTime" sid="318081168087448" static="0" type="number">0</variable>
+        <event-block sid="788233672060126">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="502111895457209" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="453109504821463" type="System">
+                    <param id="0" name="Group name">&quot;Intro Event&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="399700820060228" type="System">
+                    <param id="0" name="Group name">&quot;Night time&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="935058680437373" type="System">
+                    <param id="0" name="Group name">&quot;Boss Sense&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="133609469730838" type="System">
+                    <param id="0" name="Group name">&quot;Boss Arrived&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="625644084933395">
+            <conditions>
+                <condition id="0" name="On function" sid="136302860024289" type="Function">
+                    <param id="0" name="Name">&quot;startEvents&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="849346717202211" type="System">
+                    <param id="0" name="Variable">dialogueFinished</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="189346299308789" type="System">
+                    <param id="0" name="Variable">dialogueFinished</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="592243165719967" type="System">
+                    <param id="0" name="Variable">eventProgress</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="572028820940342">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="487953738715590" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;intro&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="322119832606172" type="System">
+                            <param id="0" name="Group name">&quot;Intro Event&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="722075759889873">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="936602429660374" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;nightTime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="541633900930194" type="System">
+                            <param id="0" name="Group name">&quot;Night time&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="679636204378577">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="671208023351681" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;bossSense&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="100494509881849" type="System">
+                            <param id="0" name="Group name">&quot;Boss Sense&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="162403825925878">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="980236914132195" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;bossArrived&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="920892556318332" type="System">
+                            <param id="0" name="Group name">&quot;Boss Arrived&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" inactive="1" sid="553647985344322" title="Intro Event">
+            <sub-events>
+                <event-block sid="107828001128942">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="347624091065551" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="268055046634973">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="826633426104649" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="995686359883007" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;I have been tasked to defend this magical crystal from these dreadful creatures.&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="975464700259706" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="694189734894319">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="338518137115106" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="661093784127091" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;W A S D to move&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Try it&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="104403244621806" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">87</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="654356604504276">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="495613013180256" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="760210684876412" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;Press left click to attack.&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="447570457545791" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="910645670217168">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="910437714325377" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="748771547698920" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;I am a magician, to use my skills press 1 2 3 4&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Try it&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="203241175105742" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">49</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="177217790330327">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="856148314423765" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="233025796954820" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;I can buy upgrades by pressing Z&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press Z&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="636187224380871" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="890063611141552">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="977368712124588" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="187926288054415" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;Time won&apos;t pause while in the Store&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.2){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.6){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="733687585747302" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="287454070197213">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="617958348882263" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="525529793091334" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;Hover each item, be sure to read what each does. All costs increases each time you buy an item.&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.6){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.2){###}&quot;Press Z to go back&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="607897743072795" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="470413971566515">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="193171191287235" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="922321773782988" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;The minions are coming be ready!&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="813429530930977" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="107276945167152">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="694198123768353" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="907248161624317" type="System">
+                                    <param id="0" name="Variable">dialogueFinished</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="291405329167728" type="System">
+                                    <param id="0" name="Group name">&quot;Intro Event&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Wave 6" inactive="1" sid="502811525157763" title="Night time">
+            <sub-events>
+                <event-block sid="776867473000839">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="310165736867060" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="850954740578184">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="749378802820627" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="575877753251262" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;It&apos;s getting dark&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="247507034548950" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                                <action id="0" name="Call function" sid="574437896207114" type="Function">
+                                    <param id="0" name="Name">&quot;triggerNight&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="311011339889572">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="147830044508403" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="294129649239438" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;I have to stay vigilant&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="958009181147679" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="183728779032812">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="328614121950800" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="611460150076764" type="System">
+                                    <param id="0" name="Variable">dialogueFinished</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="262482789070030" type="System">
+                                    <param id="0" name="Group name">&quot;Night time&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Wave 9" inactive="1" sid="634915336393306" title="Boss Sense">
+            <sub-events>
+                <event-block sid="867823652033735">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="861392666766651" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="448397547710730">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="167271160313331" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="182880237569844" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;I sense something... different...&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="548682605229105" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="320305704039802">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="281610764903670" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="179689580919840" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;I have to prepare for the worst&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="480656696811800" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="421986425214610">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="420418257076248" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="429619585148615" type="System">
+                                    <param id="0" name="Variable">dialogueFinished</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="796104786192927" type="System">
+                                    <param id="0" name="Group name">&quot;Boss Sense&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Wave 10" inactive="1" sid="342710949770687" title="Boss Arrived">
+            <sub-events>
+                <event-block sid="200860736661714">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="678746564505225" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="245343557065919">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="364346319546715" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="346885852997263" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;It&apos;s you!&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="871607168420065" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="177038936126719">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="876891685973194" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="883256503129477" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">obj_enemyBossArcher.name{###}&quot;How are you Mage?&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="214665489018705" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="292685203999615">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="288876590275489" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="231345010052150" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;You damn traitor!&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="833255980156468" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="966144190905415">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="441492092204800" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="819348943802303" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">obj_enemyBossArcher.name{###}&quot;Not really my fault.&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="288300785968190" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="560573821277957">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="322884824001048" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="158539361609628" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">obj_enemyBossArcher.name{###}&quot;The programmer just spagettified the code so much that it has become almost impossible to add another hero, me.&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="983432643353867" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="767948811724054">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="267930980053356" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="832168664563390" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">playableCharacters.name{###}&quot;...What? What are you talking about?&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="674732337666301" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="433889692662034">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="752451792224362" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="845730418387964" type="Function">
+                                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}">obj_enemyBossArcher.name{###}&quot;You done well reaching this far, PM the developer if you do. Anyhoo, prepare yourself!&quot;{###}Function.Call(&quot;relWidth&quot;, &quot;Dialogue&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;Dialogue&quot;, 0.5){###}&quot;Press E&quot;{###}&quot;Dialogue&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="373494982134458" type="Function">
+                                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                                    <param id="1" name="Parameter {n}">69</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="822618814695367">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="353144442950745" type="System">
+                                    <param id="0" name="Variable">eventProgress</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="376009609654923" type="System">
+                                    <param id="0" name="Variable">dialogueFinished</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="742606590009459" type="System">
+                                    <param id="0" name="Group name">&quot;Boss Arrived&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="162015193669337">
+            <conditions>
+                <condition id="0" name="On function" sid="500387859780694" type="Function">
+                    <param id="0" name="Name">&quot;createMessageBox&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="386810464055717">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="678402569006952" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="293860171645242" type="System">
+                            <param id="0" name="Object to create">ui_eventsPanel</param>
+                            <param id="1" name="Layer">Function.Param(5)</param>
+                            <param id="2" name="X">Function.Param(2)</param>
+                            <param id="3" name="Y">Function.Param(3)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="734964786336353" type="ui_eventsNameText">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="747140081702497" type="ui_eventsNameText">
+                            <param id="0" name="Object">ui_eventsPanel</param>
+                            <param id="1" name="Image point (optional)">&quot;toolTipName&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="589398349857253" type="ui_eventsDescText">
+                            <param id="0" name="Text">Function.Param(1)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="525260108389445" type="ui_eventsDescText">
+                            <param id="0" name="Object">ui_eventsPanel</param>
+                            <param id="1" name="Image point (optional)">&quot;toolTipDescription&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="218662998826150" type="ui_eventsCommandText">
+                            <param id="0" name="Text">Function.Param(4)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="536692163598073" type="ui_eventsCommandText">
+                            <param id="0" name="Object">ui_eventsPanel</param>
+                            <param id="1" name="Image point (optional)">&quot;toolTipCost&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Advance Event Progress when a keyboard code in Param(0) is pressed ;E = 69</comment>
+        <event-block sid="364593549491506">
+            <conditions>
+                <condition id="0" name="On function" sid="379075196439573" type="Function">
+                    <param id="0" name="Name">&quot;advanceKeyPressed&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="593649255517897">
+                    <conditions>
+                        <condition id="5" name="Key code is down" sid="936588526520377" type="Keyboard">
+                            <param id="0" name="Keycode">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="897382490653382" type="System">
+                            <param id="0" name="Variable">keyHeld</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="609398403636738" type="System">
+                            <param id="0" name="Variable">keyHeld</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="666782589344641" type="System">
+                            <param id="0" name="Variable">eventProgress</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="422991620340303" type="Audio">
+                            <param id="0" name="Audio file">eventsAdvance</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfxVolume</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="352167053250443">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="968946486649456" type="System">
+                                    <param id="0" name="First value">Function.Param(1)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;noClear&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="533325633390005" type="Function">
+                                    <param id="0" name="Name">&quot;clearMessageBox&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="845284028662745">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Key code is down" sid="763992601236915" type="Keyboard">
+                            <param id="0" name="Keycode">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="438968078240503" type="System">
+                            <param id="0" name="Variable">keyHeld</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="162246297479475" type="System">
+                            <param id="0" name="Variable">keyHeld</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="946130343396854">
+            <conditions>
+                <condition id="0" name="On function" sid="822495463044094" type="Function">
+                    <param id="0" name="Name">&quot;clearMessageBox&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="783902272921300">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="971142112953833" type="System">
+                            <param id="0" name="Object">ui_eventsPanel</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="435660476903734" type="ui_eventsPanel" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="185823472236480">
+            <conditions>
+                <condition id="0" name="On function" sid="510543139092499" type="Function">
+                    <param id="0" name="Name">&quot;triggerNight&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="238431019598865">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="782632752103361" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="LiteTween" id="4" name="Set tweened property" sid="749208423443605" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Tweened property">5</param>
+                        </action>
+                        <action behavior="LiteTween" id="3" name="Set target" sid="190540378634358" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Target is">3</param>
+                            <param id="1" name="Relativity">0</param>
+                            <param id="2" name="Value">90</param>
+                        </action>
+                        <action behavior="LiteTween" id="1" name="Set duration" sid="394700260286048" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Duration">2.5</param>
+                        </action>
+                        <action behavior="LiteTween" id="5" name="Set easing" sid="495979955456449" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Function">0</param>
+                        </action>
+                        <action behavior="LiteTween" id="10" name="Start" sid="492686677029494" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="627630119846329" type="System">
+                            <param id="0" name="Variable">nightTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="569637750685045">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="198220555953512" type="System">
+                                    <param id="0" name="Object to create">lightSource</param>
+                                    <param id="1" name="Layer">&quot;Nightshader&quot;</param>
+                                    <param id="2" name="X">playableTowers.X</param>
+                                    <param id="3" name="Y">playableTowers.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="396021810991094">
+            <conditions>
+                <condition id="0" name="On function" sid="300779523616413" type="Function">
+                    <param id="0" name="Name">&quot;triggerDay&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="533934952919694">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="294305137081227" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="LiteTween" id="4" name="Set tweened property" sid="324171025062383" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Tweened property">5</param>
+                        </action>
+                        <action behavior="LiteTween" id="3" name="Set target" sid="373657856478020" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Target is">3</param>
+                            <param id="1" name="Relativity">0</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action behavior="LiteTween" id="1" name="Set duration" sid="194272115173516" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Duration">2.5</param>
+                        </action>
+                        <action behavior="LiteTween" id="5" name="Set easing" sid="742169883492811" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Function">0</param>
+                        </action>
+                        <action behavior="LiteTween" id="10" name="Start" sid="781983629944381" type="TiledBackground_nightOverlay">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="836768048093096" type="System">
+                            <param id="0" name="Variable">nightTime</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="903380815556715">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="391842880333584" type="System">
+                                    <param id="0" name="Object">lightSource</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="289552924921779" type="lightSource" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="647604504351631">
+            <conditions>
+                <condition id="0" name="On function" sid="797741791943518" type="Function">
+                    <param id="0" name="Name">&quot;checkNightDayCycle&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="744443047344044">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="632520463737596" type="System">
+                            <param id="0" name="First value">currentWave</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="598832249341671">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="391611864142321" type="System">
+                                    <param id="0" name="First value">currentWave % 6</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="774893314951598">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="674439814430622" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="628116335273349" type="Function">
+                                            <param id="0" name="Name">&quot;triggerDay&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="723679585991204">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="512672934515024" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="291474701290681" type="System">
+                    <param id="0" name="Layer">&quot;Nightshader&quot;</param>
+                    <param id="1" name="Opacity">TiledBackground_nightOverlay.Opacity</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

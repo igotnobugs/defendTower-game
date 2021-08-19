@@ -1,0 +1,1444 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_MainMenu</name>
+    <events>
+        <variable constant="0" name="number_of_heroes" sid="413418925969285" static="0" type="number">1</variable>
+        <variable comment="0 - Main, 1 - Options, 2 - Hero Selection" constant="0" name="mainMenuState" sid="190836214871776" static="0" type="number">0</variable>
+        <variable constant="0" name="skillHoveredUID" sid="237114796612709" static="0" type="number">0</variable>
+        <include>sht_UIElements</include>
+        <event-block sid="886093942799712">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="814971538861485" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="363287455073616">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="599010349505021" type="Audio">
+                            <param id="0" name="Tag">&quot;title&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="318094030755033" type="Audio">
+                            <param id="0" name="Audio file">ancient-winds</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">musVolume + 5</param>
+                            <param id="1" name="Tag (optional)">&quot;title&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="410486763613339" title="Main Panel">
+            <sub-events>
+                <event-block sid="953841206065698">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="107941507571504" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="531905825063504" type="panel_mainMenu">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;Main&quot;, 0.5)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relHeight&quot;, &quot;Main&quot;, 1.5)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="521916351564173" type="panel_titleMenu">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;Main&quot;, 0.5)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relHeight&quot;, &quot;Main&quot;, 0.3)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="486506551444201" type="Function">
+                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                            <param id="1" name="Parameter {n}">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="857823842587394">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="387782109617652" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="177942044400489" type="btn_startButton1">
+                            <param id="0" name="X">panel_mainMenu.X</param>
+                            <param id="1" name="Y">panel_mainMenu.Y - 50</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="549985943160489" type="btn_optionButton1">
+                            <param id="0" name="X">panel_mainMenu.X</param>
+                            <param id="1" name="Y">panel_mainMenu.Y</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="803529350114140" type="btn_quitButton1">
+                            <param id="0" name="X">panel_mainMenu.X</param>
+                            <param id="1" name="Y">panel_mainMenu.Y + 50</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="971048215535975" type="text_startButton1">
+                            <param id="0" name="Object">btn_startButton1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="253222242917982" type="text_optionsButton1">
+                            <param id="0" name="Object">btn_optionButton1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="233480772378345" type="text_quitButton1">
+                            <param id="0" name="Object">btn_quitButton1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="345383871471440" type="ui_mainMenuTitle">
+                            <param id="0" name="Object">panel_titleMenu</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="233006300585444" title="Main Buttons">
+                    <sub-events>
+                        <comment>Start Button goes to Hero Select</comment>
+                        <event-block sid="986214314500366">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="431781941210266" type="Mouse">
+                                    <param id="0" name="Object">btn_startButton1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="746171651103206" type="btn_startButton2">
+                                    <param id="0" name="Object">btn_startButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="403814591671958" type="btn_startButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_startButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="314420999710942" type="btn_startButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="756459545877698">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="988690700482058" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="601586335597870" type="Function">
+                                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="355187903819087" type="Function">
+                                            <param id="0" name="Name">&quot;ShowHeroPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="383974491653042">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="214926937949934" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="215421657685612" type="btn_startButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Options Button</comment>
+                        <event-block sid="631195848402867">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="634365739014474" type="Mouse">
+                                    <param id="0" name="Object">btn_optionButton1</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="775403318198887" type="btn_optionButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="733779404462193" type="btn_optionButton2">
+                                    <param id="0" name="Object">btn_optionButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="410097083864946" type="btn_optionButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_optionButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="605706886958293" type="btn_optionButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="908593816316433">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="999692043294036" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="897475392588730" type="Function">
+                                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="894169852592609" type="Function">
+                                            <param id="0" name="Name">&quot;ShowOptionsPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="469331464486726">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="128714876731912" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="206225988905301" type="btn_optionButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Quit Button</comment>
+                        <event-block sid="926931557469100">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="638433075011980" type="Mouse">
+                                    <param id="0" name="Object">btn_quitButton1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="406791454907276" type="btn_quitButton2">
+                                    <param id="0" name="Object">btn_quitButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="172887925523178" type="btn_quitButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_quitButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="231433080066171" type="btn_quitButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="420151969551381">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="357859385069290" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Close" sid="254404716098236" type="Browser" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="945447986031814">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="758731350856088" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="540313745652598" type="btn_quitButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="775441886537532" title="Options Panel">
+            <sub-events>
+                <event-block sid="556966388961311">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="984878411029298" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="759103957158347" type="btn_options1">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.2)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, -0.2)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="324699149893876" type="panel_optionsMenu">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 1.5)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.5)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="425560666315516">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="166694488337842" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="803124253696489" type="text_optionsBack">
+                            <param id="0" name="Object">btn_options1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="623802276263176">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="795356235828001" type="btn_creditsButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="222234458295867" type="btn_creditsButton1">
+                                    <param id="0" name="X">panel_optionsMenu.X</param>
+                                    <param id="1" name="Y">panel_optionsMenu.Y - 75</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="942531970974179" type="text_controlButton1">
+                                    <param id="0" name="Object">btn_controlButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="858038824122454">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="131502624530433" type="btn_controlButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="274005542624210" type="btn_controlButton1">
+                                    <param id="0" name="X">panel_optionsMenu.X</param>
+                                    <param id="1" name="Y">panel_optionsMenu.Y</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="142125633788121" type="text_creditsButton1">
+                                    <param id="0" name="Object">btn_creditsButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="334617854109953">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="622534681390471" type="btn_soundButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="554583749842703" type="text_soundButton1">
+                                    <param id="0" name="Object">btn_soundButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="132945955247504">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="254154999507460" type="btn_soundButton1">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="817631450385193" type="btn_soundButton1">
+                                            <param id="0" name="X">panel_optionsMenu.X</param>
+                                            <param id="1" name="Y">panel_optionsMenu.Y + 75</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="768913929941397" title="Option Buttons">
+                    <sub-events>
+                        <comment>Options Back Button</comment>
+                        <event-block sid="291987047323890">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="272360845431053" type="Mouse">
+                                    <param id="0" name="Object">btn_options1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="349330931497095" type="btn_options2">
+                                    <param id="0" name="Object">btn_options1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="890718978266343" type="btn_options2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_options1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="911706875893002" type="btn_options2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="144726699209770">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="927049846367669" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="132945228586226">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="471661598846022" type="btn_soundButton1">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="504091641774933" type="Function">
+                                                    <param id="0" name="Name">&quot;HideSoundOptions&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="684794263621889">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="250582603280432" type="Function">
+                                                    <param id="0" name="Name">&quot;ShowOptionsPanel&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="545532528252502" type="Function">
+                                                    <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                                                    <param id="1" name="Parameter {n}">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="616970245495628">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="465304875798214" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="395886235533850" type="btn_options2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sound Button</comment>
+                        <event-block sid="864811963580437">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="429709387440830" type="Mouse">
+                                    <param id="0" name="Object">btn_soundButton1</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="435265125046700" type="btn_soundButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="458565218021339" type="btn_soundButton2">
+                                    <param id="0" name="Object">btn_soundButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="465190758453113" type="btn_soundButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_soundButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="249962286575838" type="btn_soundButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="781366987259921">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="465072744501986" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="381073061486129">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="147325266181985" type="btn_soundButton1">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="940611088348317" type="Function">
+                                                    <param id="0" name="Name">&quot;ShowSoundOptions&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="368398812701788">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="337354351315601" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="475292725226367" type="Function">
+                                                    <param id="0" name="Name">&quot;HideSoundOptions&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="609913617551100">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="464957798331025" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="844712044211667" type="btn_soundButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Control Button</comment>
+                        <event-block sid="378710011668434">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="903308348167490" type="Mouse">
+                                    <param id="0" name="Object">btn_controlButton1</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="272252639306029" type="btn_controlButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="674132500014169" type="btn_controlButton2">
+                                    <param id="0" name="Object">btn_controlButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="220105315137696" type="btn_controlButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_controlButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="291424360986891" type="btn_controlButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="857374133168977">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="279865375787689" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="573921764141694" type="Function">
+                                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="892003677331439" type="Function">
+                                            <param id="0" name="Name">&quot;ShowOptionsPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="792735411320648">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="429325115367998" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="563715014898897" type="btn_controlButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Credits Button</comment>
+                        <event-block sid="467629879669845">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="394768574621981" type="Mouse">
+                                    <param id="0" name="Object">btn_creditsButton1</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="719614797804845" type="btn_creditsButton1" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="320604440619028" type="btn_creditsButton2">
+                                    <param id="0" name="Object">btn_creditsButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="283552356999370" type="btn_creditsButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_creditsButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="418669916905856" type="btn_creditsButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="519187756395911">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="767911264852295" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="459706533571774" type="Function">
+                                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="656520683674875" type="System">
+                                            <param id="0" name="Variable">mainMenuState</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="437064909834236" type="Function">
+                                            <param id="0" name="Name">&quot;HideOptionsPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="707467811028982">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="524314217955285" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="848680990598406" type="btn_creditsButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="Game starts here as well" sid="413706668686837" title="Hero Panel">
+            <sub-events>
+                <event-block sid="560932944561673">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="159537914201092" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="586732235092389" type="btn_playButton1">
+                            <param id="0" name="X">Self.X </param>
+                            <param id="1" name="Y">Self.Y + 400</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="434933056687929" type="btn_heroSelectBack1">
+                            <param id="0" name="X">Self.X </param>
+                            <param id="1" name="Y">Self.Y + 400</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="525593753605136" type="panel_heroSelect1">
+                            <param id="0" name="X">(scrollx / number_of_heroes) </param>
+                            <param id="1" name="Y">(scrolly * 2) + Self.Height</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="580191665787096">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="534451464069007" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="969573680520500" type="text_playButton1">
+                            <param id="0" name="Object">btn_playButton1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="997781561124522" type="text_heroSelectBack1">
+                            <param id="0" name="Object">btn_heroSelectBack1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="479166461048435" type="panel_heroSelectMage">
+                            <param id="0" name="X">panel_heroSelect1.X</param>
+                            <param id="1" name="Y">panel_heroSelect1.Y - (panel_heroSelect1.Height / 4)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="251943429140539" type="ui_laserIcon">
+                            <param id="0" name="X">panel_heroSelect1.X - (panel_heroSelect1.Width * (3/ 8))</param>
+                            <param id="1" name="Y">panel_heroSelect1.Y</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="644892785582090" type="ui_blinkIcon">
+                            <param id="0" name="X">panel_heroSelect1.X - (panel_heroSelect1.Width * (1/ 8))</param>
+                            <param id="1" name="Y">panel_heroSelect1.Y</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="993133713556687" type="ui_stunIcon">
+                            <param id="0" name="X">panel_heroSelect1.X + (panel_heroSelect1.Width * (1/ 8))</param>
+                            <param id="1" name="Y">panel_heroSelect1.Y</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="446836456529848" type="ui_fireBallIcon">
+                            <param id="0" name="X">panel_heroSelect1.X + (panel_heroSelect1.Width * (3/ 8))</param>
+                            <param id="1" name="Y">panel_heroSelect1.Y</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="645158732899100" type="text_heroSelectStats1">
+                            <param id="0" name="X">panel_heroSelect1.X</param>
+                            <param id="1" name="Y">panel_heroSelect1.Y + (panel_heroSelect1.Height / 4)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="116737375876270" type="ui_frameSkill1">
+                            <param id="0" name="Object">ui_laserIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="141428174280144" type="ui_frameSkill2">
+                            <param id="0" name="Object">ui_blinkIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="870230819849864" type="ui_frameSkill3">
+                            <param id="0" name="Object">ui_stunIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="134087864782870" type="ui_frameSkill4">
+                            <param id="0" name="Object">ui_fireBallIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="665640620943512" title="Hero Selection Buttons">
+                    <sub-events>
+                        <comment>Start Button</comment>
+                        <event-block sid="841895617985230">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="670003114244353" type="Mouse">
+                                    <param id="0" name="Object">btn_playButton1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="579233285086184" type="btn_playButton2">
+                                    <param id="0" name="Object">btn_playButton1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="136741629360978" type="btn_playButton2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_playButton1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="362155827825864" type="btn_playButton2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="730445683202828">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="767862802112756" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="901300568860515" type="Function">
+                                            <param id="0" name="Name">&quot;ShowHeroPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="981960299606996" type="System">
+                                            <param id="0" name="Layout">StraightLinearMap</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="323893826606712">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="237121398595989" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="983126107292233" type="btn_playButton2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Back Button</comment>
+                        <event-block sid="695677089565678">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="508265368245966" type="Mouse">
+                                    <param id="0" name="Object">btn_heroSelectBack1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="415048056124296" type="btn_heroSelectBack2">
+                                    <param id="0" name="Object">btn_heroSelectBack1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="621707330706343" type="btn_heroSelectBack2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_heroSelectBack1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="953617712311102" type="btn_heroSelectBack2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="789955229077808">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="647100475727543" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="134091200091549" type="Function">
+                                            <param id="0" name="Name">&quot;ShowHeroPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="142433135763769" type="Function">
+                                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="305542368154392">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="893263643573982" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="586646941879573" type="btn_heroSelectBack2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="Enable parallax effects on some backgrounds" sid="424233703067808" title="Parallax Backgrounds">
+            <sub-events>
+                <event-block sid="289287779545015">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="759066399268502" type="System">
+                            <param id="0" name="Variable">mainMenuState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="862155946842448" type="System">
+                            <param id="0" name="Layer">&quot;ForestParallax&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="138062525185813" type="System">
+                            <param id="0" name="Group name">&quot;Background Forest Parallax&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="597234184584223" type="System">
+                            <param id="0" name="Layer">&quot;MountainsParallax&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="819027845571983" type="System">
+                            <param id="0" name="Group name">&quot;Background Mountain Parallax&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="295060001900135">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="167443086711705" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="271896516057295" type="System">
+                            <param id="0" name="Layer">&quot;MountainsParallax&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="729958018445635" type="System">
+                            <param id="0" name="Group name">&quot;Background Mountain Parallax&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="261350088129194" type="System">
+                            <param id="0" name="Layer">&quot;ForestParallax&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="525636313161751" type="System">
+                            <param id="0" name="Group name">&quot;Background Forest Parallax&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="719414282828262" title="Background Forest Parallax">
+                    <sub-events>
+                        <event-block sid="171796715638853">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="425916741802440" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="805550787847122" type="parallax_forest">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 100, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="630416184632603" type="parallax_forestMiddle">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 50, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="967131303134211" type="parallax_forestLight">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 20, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="707119654878202" type="parallax_forestFront">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 10, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="185518220334111" title="Background Mountain Parallax">
+                    <sub-events>
+                        <event-block sid="707053256234720">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="763431127251357" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="823604621166089" type="parallax_sky">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 100, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="416592786129572" type="parallax_mountainBig">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 50, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="769247894656842" type="parallax_mountainNear">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 20, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="110898631536134" type="parallax_treesBig">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 10, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="675947633000670" type="parallax_treesNear">
+                                    <param id="0" name="X">lerp(Self.X - 100, Function.Call(&quot;setParallax&quot;, 5, 20), 0.5)</param>
+                                    <param id="1" name="Y">Self.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="Make transistions smooth" sid="385746697506729" title="Main Menu Tweenings">
+            <sub-events>
+                <comment>Param(0) = 0 - Pop Out; 1 - Pop In, </comment>
+                <comment>153 - Main Panel; 148 - Title</comment>
+                <event-block sid="476611487727284">
+                    <conditions>
+                        <condition id="0" name="On function" sid="890777814672526" type="Function">
+                            <param id="0" name="Name">&quot;ShowMainPanel&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="539278115192694">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="154330658179278" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="781323155250205">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="538203794322635" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="696333848962441" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">153{###}Function.Call(&quot;relWidth&quot;, &quot;Main&quot;, 0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Main&quot;, 0.7){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="673056609477342" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">153</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="929480606471618" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">148{###}Function.Call(&quot;relWidth&quot;, &quot;Main&quot;, 0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Main&quot;, 0.3){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="232300436893078" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">148</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="562889301958156" type="System">
+                                            <param id="0" name="Variable">mainMenuState</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="639491991570152">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="709103009865178" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="229299219663163" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">153{###}Function.Call(&quot;relWidth&quot;, &quot;Main&quot;, -0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Main&quot;, 0.7){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="247498628952723" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">153</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="852941111895667" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">148{###}Function.Call(&quot;relWidth&quot;, &quot;Main&quot;, -0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Main&quot;, 0.3){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="812945566541681" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">148</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>225 - Options Panel; 219 - Back Button</comment>
+                <event-block sid="272226329207389">
+                    <conditions>
+                        <condition id="0" name="On function" sid="841841456697858" type="Function">
+                            <param id="0" name="Name">&quot;ShowOptionsPanel&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="973791622523379">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="548448391798306" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="875685495957498">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="792768070768723" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="296490508795389" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">225{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.5){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="184413705056177" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">225</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="817799695798702" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">219{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.2){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.2){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="516795687317782" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">219</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="136304604655607" type="System">
+                                            <param id="0" name="Variable">mainMenuState</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="151871778272018">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="541032613531949" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="659003148861061" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">225{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 1.5){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.5){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="233528800165163" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">225</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="799676330104603" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">219{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.2){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, -0.2){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="309428108618083" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">219</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>235 - Hero 1 Panel; 247 - Back Button; 243 - Play Button</comment>
+                <event-block sid="362610904958592">
+                    <conditions>
+                        <condition id="0" name="On function" sid="935882662051925" type="Function">
+                            <param id="0" name="Name">&quot;ShowHeroPanel&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="904803724382327">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="188345983363582" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="341906721817326">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="455289426989750" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="632935359004309" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">235{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.5){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="686762823316086" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">235</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="494589944970520" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">247{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.15){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.9){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="845715454199300" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">247</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="537779135884011" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">243{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.85){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.9){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="128772596868469" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">243</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="610707740940680" type="System">
+                                            <param id="0" name="Variable">mainMenuState</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="555935674436512">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="692013158014414" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="840281488866823" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">235{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.5){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 1.5){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="119822965232411" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">235</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="469938985583474" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">247{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.15){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 1.1){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="357038931553565" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">247</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="701301250760300" type="Function">
+                                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">243{###}Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.85){###}Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 1.1){###}1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="626627627867654" type="Function">
+                                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                                            <param id="1" name="Parameter {n}">243</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="356891696399972">
+                    <conditions>
+                        <condition id="0" name="On function" sid="597983618090190" type="Function">
+                            <param id="0" name="Name">&quot;ShowSoundOptions&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="419202647565390">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="360047220162471" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween2" id="4" name="Set tweened property" sid="615922993143437" type="btn_soundButton1">
+                                    <param id="0" name="Tweened property">0</param>
+                                </action>
+                                <action behavior="LiteTween2" id="3" name="Set target" sid="705514721942528" type="btn_soundButton1">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">Function.Call(&quot;relWidth&quot;, &quot;Options&quot;, 0.5)</param>
+                                </action>
+                                <action behavior="LiteTween2" id="3" name="Set target" sid="839998795226654" type="btn_soundButton1">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">Function.Call(&quot;relHeight&quot;, &quot;Options&quot;, 0.3)</param>
+                                </action>
+                                <action behavior="LiteTween2" id="1" name="Set duration" sid="485761494637062" type="btn_soundButton1">
+                                    <param id="0" name="Duration">1</param>
+                                </action>
+                                <action behavior="LiteTween2" id="5" name="Set easing" sid="769110725341285" type="btn_soundButton1">
+                                    <param id="0" name="Function">17</param>
+                                </action>
+                                <action behavior="LiteTween2" id="10" name="Start" sid="382540226799981" type="btn_soundButton1">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="176516661954637" type="btn_creditsButton1">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="580245663686314" type="btn_controlButton1">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="790839241734247" type="btn_soundButton1">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="794763636262761" type="text_creditsButton1">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="553353024424141" type="text_controlButton1">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="620857640866598">
+                    <conditions>
+                        <condition id="0" name="On function" sid="732942502958119" type="Function">
+                            <param id="0" name="Name">&quot;HideSoundOptions&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="896110421731287">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="764184543198786" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween2" id="4" name="Set tweened property" sid="637995333616783" type="btn_soundButton1">
+                                    <param id="0" name="Tweened property">0</param>
+                                </action>
+                                <action behavior="LiteTween2" id="3" name="Set target" sid="379672540904761" type="btn_soundButton1">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">panel_optionsMenu.X</param>
+                                </action>
+                                <action behavior="LiteTween2" id="3" name="Set target" sid="765743458009033" type="btn_soundButton1">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">panel_optionsMenu.Y + 75</param>
+                                </action>
+                                <action behavior="LiteTween2" id="1" name="Set duration" sid="946236063378480" type="btn_soundButton1">
+                                    <param id="0" name="Duration">1</param>
+                                </action>
+                                <action behavior="LiteTween2" id="5" name="Set easing" sid="902424674213145" type="btn_soundButton1">
+                                    <param id="0" name="Function">17</param>
+                                </action>
+                                <action behavior="LiteTween2" id="10" name="Start" sid="974325503503143" type="btn_soundButton1">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="628039581069138" type="btn_creditsButton1">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="985290907239788" type="btn_controlButton1">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="111167102207055" type="btn_soundButton1">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="476115180161221" type="text_creditsButton1">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="214050087057405" type="text_controlButton1">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="show tooltip when item is hovered" sid="409046920422231" title="Hover / ToolTips Hero Panel">
+            <sub-events>
+                <event-block sid="181642769368972">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="194997637538804" type="Mouse">
+                            <param id="0" name="Object">mainMenuToolTips</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="863467644238715" type="System">
+                            <param id="0" name="Variable">skillHoveredUID</param>
+                            <param id="1" name="Value">mainMenuToolTips.UID</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="182719771829339">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="751699418985921" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="889243869789258" type="System">
+                                    <param id="0" name="Object to create">ui_storeItemTooltip</param>
+                                    <param id="1" name="Layer">(&quot;HeroSelect&quot;)</param>
+                                    <param id="2" name="X">Mouse.X(&quot;HeroSelect&quot;)</param>
+                                    <param id="3" name="Y">Mouse.Y(&quot;HeroSelect&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="683696992309708" type="ui_storeItemNameText">
+                                    <param id="0" name="Text">Function.Call(&quot;findSkillName&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="457770463538667" type="ui_storeItemNameText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipName&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="543127199709833" type="ui_storeItemDescText">
+                                    <param id="0" name="Text">Function.Call(&quot;findSkillDescription&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="647845523565157" type="ui_storeItemDescText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipDescription&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="977030928239448" type="ui_toolTipItemCost">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="578660729822642">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Set position" sid="471444166201166" type="ui_storeItemTooltip">
+                                    <param id="0" name="X">Mouse.X(&quot;HeroSelect&quot;)</param>
+                                    <param id="1" name="Y">Mouse.Y(&quot;HeroSelect&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="982787916487838" type="ui_storeItemNameText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipName&quot;</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="302515103320016" type="ui_storeItemDescText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipDescription&quot;</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="501097361320050" type="ui_toolTipItemCost">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipCost&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="972813380064896">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="493115460462512" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="690226588986632" type="ui_storeItemTooltip" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Clickable button sounds</comment>
+        <event-block sid="225686853659477">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="457876022022078" type="Mouse">
+                    <param id="0" name="Object">clickableMainButtons</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="625462793180357" type="clickableMainButtons" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="760336384667684">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="129960102968194" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="740753145833652" type="Audio">
+                            <param id="0" name="Audio file">Decision1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfxVolume - 10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="177364507384752">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="488719060805543" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">clickableMainButtons</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="339966753445352">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="729649746602405" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="835286508076023" type="Audio">
+                                    <param id="0" name="Audio file">Decision2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">sfxVolume - 10</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Main Menu music</comment>
+        <event-block sid="153748682353939">
+            <conditions>
+                <condition id="0" name="On function" sid="905041475939207" type="Function">
+                    <param id="0" name="Name">&quot;setParallax&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="452206258204363" type="Function">
+                    <param id="0" name="Value">(((Mouse.X(&quot;Main&quot;) - WindowWidth/2) * - 1) / Function.Param(0)) - Function.Param(1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="317959541234622">
+            <conditions>
+                <condition id="0" name="On function" sid="914572629453452" type="Function">
+                    <param id="0" name="Name">&quot;findSkillName&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="889060973576488">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="645150003308213" type="System">
+                            <param id="0" name="Object">mainMenuToolTips</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="910556688526393">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="912258638693283" type="System">
+                                    <param id="0" name="First value">skillHoveredUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">mainMenuToolTips.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="551944116742801" type="Function">
+                                    <param id="0" name="Value">mainMenuToolTips.toolTipName</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="911892955809443">
+            <conditions>
+                <condition id="0" name="On function" sid="457854464964859" type="Function">
+                    <param id="0" name="Name">&quot;findSkillDescription&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="724999385317516">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="712082462125408" type="System">
+                            <param id="0" name="Object">mainMenuToolTips</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="267141033097868">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="513003422061410" type="System">
+                                    <param id="0" name="First value">skillHoveredUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">mainMenuToolTips.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="930066153633535" type="Function">
+                                    <param id="0" name="Value">mainMenuToolTips.toolTipDescription</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

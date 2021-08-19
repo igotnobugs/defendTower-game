@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_Loading</name>
+    <events>
+        <variable constant="0" name="loaderComplete" sid="439151132379526" static="0" type="number">0</variable>
+        <event-block sid="826356460999023">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="435107539907308" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="568331760559160" type="allTexts">
+                    <param id="0" name="Family name">&quot;tight_pixelregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="213725195865206" type="System">
+                    <param id="0" name="Variable">loaderComplete</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="354021839614018">
+            <conditions>
+                <condition id="-25" name="On loader layout complete" sid="431052689244163" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="133235609208112" type="System">
+                    <param id="0" name="Variable">loaderComplete</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Extra time to load, show group logo in the mean time</comment>
+        <event-block sid="332799493924124">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="731543349553637" type="System">
+                    <param id="0" name="Variable">loaderComplete</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="862544146123140">
+                    <conditions>
+                        <condition id="-7" name="Compare time" sid="951865573576615" type="System">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Time (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Preload" sid="759521570078514" type="Audio">
+                            <param id="0" name="Audio file">ancient-winds</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="657218534762590" type="System">
+                            <param id="0" name="Layout">MainMenuMap</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

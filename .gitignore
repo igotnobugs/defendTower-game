@@ -1,0 +1,5 @@
+*.capx.autosave
+*.capx.backup1
+*.uistate.xml
+
+Event sheets/*.uistate.xml

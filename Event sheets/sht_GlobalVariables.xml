@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_GlobalVariables</name>
+    <events>
+        <variable constant="0" name="musVolume" sid="285655858426408" static="0" type="number">-5</variable>
+        <variable constant="0" name="sfxVolume" sid="839678172194238" static="0" type="number">-10</variable>
+    </events>
+</c2eventsheet>

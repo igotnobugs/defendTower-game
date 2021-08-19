@@ -1,0 +1,2130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>defendTower</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>3k8y8jenijj4j</unique-id>
+    <saved-with-version>27500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Yann Granjon" id="JSON" version="1">JSON</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="XML" version="1">XML</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="gamma">Gamma</effect>
+        <effect author="Scirra" id="grayscale">Grayscale</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>LoadingStart</first-layout>
+    <use-loader-layout>1</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Downscaling">High quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Bars">
+            <object-type name="ui_1skillbar" sid="268399148928601">
+                <plugin id="progressbar" />
+            </object-type>
+            <object-type name="ui_2skillbar" sid="769063619105956">
+                <plugin id="progressbar" />
+            </object-type>
+            <object-type name="ui_3skillbar" sid="172317398439110">
+                <plugin id="progressbar" />
+            </object-type>
+            <object-type name="ui_4skillbar" sid="849834402002202">
+                <plugin id="progressbar" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Enemies">
+            <object-type name="obj_enemyMelee" sid="132040855393727">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="706826059520441" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Downloads\88217500_304353433870935_3136430151718404096_n.png">
+                            <image-point name="healthBar" x="0.5" y="-0.15625" />
+                            <collision-poly>
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.0625" />
+                                <point x="0.90625" y="0.09375" />
+                                <point x="0.9375" y="0.5" />
+                                <point x="0.90625" y="0.90625" />
+                                <point x="0.5" y="1" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.03125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_enemyRanged" sid="290724615555615">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784612045755730" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Downloads\87040899_515805229352373_666734238946557952_n.png">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_enemyTank" sid="436500059314393">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="848382104848078" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Desktop\ne w ass\91607283_224262875556754_8246203299829645312_n.png">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_enemyFlyer" sid="892013347257687">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="906953947342724" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Desktop\ne w ass\92359615_224243115458916_8819695177464545280_n.png">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_enemyCatapult" sid="997779321984498">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="113193087474716" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Desktop\ne w ass\92485715_356944931914585_4956918345833119744_n.png">
+                            <collision-poly>
+                                <point x="0.90625" y="0.5" />
+                                <point x="0.84375" y="0.84375" />
+                                <point x="0.5" y="1" />
+                                <point x="0.28125" y="0.71875" />
+                                <point x="0.03125" y="0.5" />
+                                <point x="0.3125" y="0.3125" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.78125" y="0.21875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="ParticleEffects">
+            <object-type name="par_laserPath" sid="761415309763074">
+                <plugin id="Particles" />
+                <container>
+                    <type>proj_laser</type>
+                    <type>par_laserPath</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="par_stunPath1" sid="465937071327276">
+                <plugin id="Particles" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="231418355504738">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>proj_stunBullet</type>
+                    <type>par_stunPath1</type>
+                    <type>par_stunPath2</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="par_stunPath2" sid="518282395475725">
+                <plugin id="Particles" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="225790777292128">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>proj_stunBullet</type>
+                    <type>par_stunPath1</type>
+                    <type>par_stunPath2</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="par_hitEffect" sid="403224967714343">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="par_fireballExplo" sid="795434238616245">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="par_blinkOut" sid="864150428338533">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="par_blinkTarget" sid="822750573620748">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="par_blinkCharging" sid="943858376200995">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder name="Players">
+            <object-type name="obj_playerMage" sid="321524992379798">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isBlinkFinished" sid="835361828567214" type="boolean" />
+                    <instance-variable name="distanceToBlink" sid="729958217279834" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="700071568037339" speed="5">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.53125" original-source="C:\Users\11400314\Downloads\87638109_184563659625836_7382338746420559872_n.png">
+                            <image-point name="ShootPoint" x="1.15625" y="0.53125" />
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.53125" original-source="C:\Users\11400314\Downloads\87638109_184563659625836_7382338746420559872_n.png">
+                            <image-point name="ShootPoint" x="1.15625" y="0.53125" />
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.46875" original-source="C:\Users\11400314\Downloads\87638109_184563659625836_7382338746420559872_n.png">
+                            <image-point name="ShootPoint" x="1.15625" y="0.46875" />
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.46875" hotspotY="0.53125" original-source="C:\Users\11400314\Downloads\87638109_184563659625836_7382338746420559872_n.png">
+                            <image-point name="ShootPoint" x="-0.15625" y="0.53125" />
+                            <collision-poly>
+                                <point x="0.875" y="0.5" />
+                                <point x="0.84375" y="0.84375" />
+                                <point x="0.5" y="1" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.125" y="0.5" />
+                                <point x="0.5" y="0.125" />
+                                <point x="0.78125" y="0.21875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.53125" original-source="C:\Users\11400314\Downloads\87638109_184563659625836_7382338746420559872_n.png">
+                            <image-point name="ShootPoint" x="1.15625" y="0.53125" />
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_playerArcher" sid="309552936536085">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="753995093942477" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Desktop\87672814_929216704162029_5054980102832521216_n.png">
+                            <collision-poly>
+                                <point x="0.0625" y="0.0625" />
+                                <point x="0.5" y="0.09375" />
+                                <point x="0.84375" y="0.15625" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.8125" y="0.8125" />
+                                <point x="0.5" y="1" />
+                                <point x="0.375" y="0.625" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Projectiles">
+            <object-type name="proj_enemyArrows" sid="666871895429728">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isFired" sid="648933948558593" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="726600929313141">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="466934827305752">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="210021661632790" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="proj_laser" sid="811016295500251">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="length" sid="353164243829126" type="number" />
+                    <instance-variable name="isFired" sid="356362432351744" type="boolean" />
+                    <instance-variable name="isPiercing" sid="112819341436300" type="number" />
+                </instance-variables>
+                <container>
+                    <type>proj_laser</type>
+                    <type>par_laserPath</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="535179082585664" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="proj_manaBullet" sid="332847690856670">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="805954754248299" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="proj_fireball" sid="137432182036177">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isFired" sid="963735198892566" type="boolean" />
+                    <instance-variable name="isExploded" sid="382939873887019" type="boolean" />
+                    <instance-variable name="distToTarget" sid="487127532045253" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="559681684054701">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="276211290091525">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="772845595803933" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="proj_stunBullet" sid="602171044686338">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isFired" sid="989047355515086" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="258741465816593">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="102713077400311">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>proj_stunBullet</type>
+                    <type>par_stunPath1</type>
+                    <type>par_stunPath2</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198616444811368" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="proj_enemyCatapult" sid="629224792687357">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isFired" sid="804243923990008" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="485662078200945">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="868619527206047">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="286981904327773" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Desktop\ne w ass\92302011_2566446583675570_6274958218867245056_n.png">
+                            <collision-poly>
+                                <point x="0.34375" y="0.34375" />
+                                <point x="0.5" y="0.296875" />
+                                <point x="0.734375" y="0.265625" />
+                                <point x="1" y="0.5" />
+                                <point x="0.71875" y="0.71875" />
+                                <point x="0.5" y="0.6875" />
+                                <point x="0.34375" y="0.65625" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Tower">
+            <object-type name="obj_towerMage" sid="884216566008129">
+                <plugin id="Sprite" />
+                <container>
+                    <type>obj_towerMage</type>
+                    <type>obj_towerMageShield</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="688040408964790" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Downloads\88077153_2657659654362778_8596213572193746944_n.png">
+                            <collision-poly>
+                                <point x="0.234375" y="0.234375" />
+                                <point x="0.5" y="0.015625" />
+                                <point x="0.734375" y="0.265625" />
+                                <point x="0.890625" y="0.5" />
+                                <point x="0.90625" y="0.90625" />
+                                <point x="0.5" y="1" />
+                                <point x="0.140625" y="0.859375" />
+                                <point x="0.046875" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_towerMageShield" sid="917145558447757">
+                <plugin id="Sprite" />
+                <container>
+                    <type>obj_towerMage</type>
+                    <type>obj_towerMageShield</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588211783096059" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_towerArmor" sid="415378271247612">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Desktop\Sprite-0004.png" />
+            </object-type>
+            <object-type name="ui_towerHealth" sid="472067136862801">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Desktop\Sprite-0003.png" />
+            </object-type>
+            <object-type name="obj_archerTower" sid="937514428292306">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="duration" sid="124035612556734" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="976180296445570" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Downloads\archerTower.png">
+                            <collision-poly>
+                                <point x="0.125" y="0.125" />
+                                <point x="0.5" y="0.09375" />
+                                <point x="0.875" y="0.125" />
+                                <point x="0.90625" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Effects">
+            <object-type name="vfx_fireballShadow" sid="325014675310337">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="652635239280528">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="456859210331948" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="par_buyTrail" sid="866794229289317">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="par_buyExplo" sid="745793460021287">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder name="Environment">
+            <object-type name="TiledMapBackground1" sid="596385143467079">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Jerry\Desktop\RPG Nature Tileset 64.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TiledMapBackground2" sid="360993264136251">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Jerry\Desktop\RPG Nature Tileset 64.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TiledBackground_nightOverlay" sid="722712699338240">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="484578523152950">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder name="Buttons">
+            <object-type name="btn_reset" sid="939719704250160">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="sfxMusicSlider" sid="350435358237364">
+                <plugin id="sliderbar" />
+            </object-type>
+        </object-folder>
+        <object-folder name="GameUI">
+            <object-folder name="Store">
+                <object-type name="ui_storeBuyText" sid="613990405653882">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="ui_storePanel" sid="586645770594655">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="keyTPressed" sid="582057797500670" type="boolean" />
+                        <instance-variable name="showStore" sid="741961650796813" type="boolean" />
+                        <instance-variable name="itemSelectedUID" sid="216328837859353" type="number" />
+                        <instance-variable name="itemHoveredUID" sid="279400397628838" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="985730287008840" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\89298877_497367537556813_5193214797780353024_n (1).png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ui_storeTitleText" sid="560712186189234">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="ui_storeItemNameText" sid="827647817062373">
+                    <plugin id="Text" />
+                    <container>
+                        <type>ui_storeItemTooltip</type>
+                        <type>ui_storeItemNameText</type>
+                        <type>ui_storeItemDescText</type>
+                        <type>ui_toolTipItemCost</type>
+                    </container>
+                </object-type>
+                <object-type name="ui_storeItemTooltip" sid="243642473700628">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="isDrawn" sid="126444710540602" type="boolean" />
+                        <instance-variable name="itemHovered" sid="978323109980345" type="number" />
+                    </instance-variables>
+                    <container>
+                        <type>ui_storeItemTooltip</type>
+                        <type>ui_storeItemNameText</type>
+                        <type>ui_storeItemDescText</type>
+                        <type>ui_toolTipItemCost</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="865365971962129" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <image-point name="toolTipName" x="0.035" y="0.04" />
+                                <image-point name="toolTipDescription" x="0.055" y="0.34" />
+                                <image-point name="toolTipCost" x="0.98" y="0.95" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ui_storeBuyArea" sid="281039810969642">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="334741874166510" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ui_storeTitleText2" sid="171534933255798">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="ui_storePanel2" sid="367702705589936">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="keyTPressed" sid="624628615951851" type="boolean" />
+                        <instance-variable name="showStore" sid="608163307924532" type="boolean" />
+                        <instance-variable name="itemSelectedUID" sid="614290915741469" type="number" />
+                        <instance-variable name="itemHoveredUID" sid="410126725066267" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="358219672353966" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\89298877_497367537556813_5193214797780353024_n (1).png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ui_storeTowerText" sid="851792686035497">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="ui_storeCharacterText" sid="997701261093150">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="ui_storeItemDescText" sid="619820665883131">
+                    <plugin id="Text" />
+                    <container>
+                        <type>ui_storeItemTooltip</type>
+                        <type>ui_storeItemNameText</type>
+                        <type>ui_storeItemDescText</type>
+                        <type>ui_toolTipItemCost</type>
+                    </container>
+                </object-type>
+                <object-type name="ui_toolTipItemCost" sid="788611395172215">
+                    <plugin id="Text" />
+                    <container>
+                        <type>ui_storeItemTooltip</type>
+                        <type>ui_storeItemNameText</type>
+                        <type>ui_storeItemDescText</type>
+                        <type>ui_toolTipItemCost</type>
+                    </container>
+                </object-type>
+            </object-folder>
+            <object-type name="ui_floatingHealthBar" sid="565821462946055">
+                <plugin id="NinePatch" />
+                <instance-variables>
+                    <instance-variable name="id" sid="809783338491183" type="number" />
+                </instance-variables>
+                <container>
+                    <type>ui_floatingHealthBar</type>
+                    <type>ui_floatingHealth</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="ui_floatingHealth" sid="312117338026690">
+                <plugin id="NinePatch" />
+                <instance-variables>
+                    <instance-variable name="id" sid="574720052905513" type="number" />
+                </instance-variables>
+                <container>
+                    <type>ui_floatingHealthBar</type>
+                    <type>ui_floatingHealth</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="ui_iconProgress" sid="764586219523171">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="651936229639012" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_laserIcon" sid="207675702715275">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="954036266903278" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Downloads\1.png">
+                            <image-point name="Progress" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_blinkIcon" sid="606091040026232">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="404783877711081" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Downloads\2.png">
+                            <image-point name="Progress" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="frame_divider" sid="700741200479792">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="560707617135321" speed="5">
+                        <frame duration="1" hotspotX="2.66667" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_equipmentFrame1" sid="994164446554023">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="303017091445041" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_frameSkill3" sid="812901566684605">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="999680952199632" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_frameSkill1" sid="944683124348420">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="859645585858294" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_item3" sid="808533516101459">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="523347120335815" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_frameSkill4" sid="768071148436884">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="934777461763487" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_frame" sid="240487858864275">
+                <plugin id="NinePatch" />
+                <texture />
+            </object-type>
+            <object-type name="ui_item1" sid="144680522221077">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="817689308930322" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Documents\Unsorted\Github\defendTower-game\Animations\item_bookEnlight\Default\000.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_frameSkill2" sid="515358979448251">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="681661716818644" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_stunIcon" sid="100902530880527">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="234919132668013" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Downloads\3.png">
+                            <image-point name="Progress" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_fireBallIcon" sid="117625516645813">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784581201286746" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Downloads\4.png">
+                            <image-point name="Progress" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_equipmentFrame2" sid="787872613138418">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="499317170280258" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_equipmentFrame3" sid="233261157593772">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="454885825038006" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_equipmentFrame4" sid="382793245687622">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372113583165101" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_equipmentFrame5" sid="556816126362087">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="612441683192711" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_bottomPanels" sid="169178285746673">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="334092128545260">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="487908000029169" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.526316" original-source="C:\Users\Jerry\Desktop\90500112_822092031637781_6308489724331819008_n.png">
+                            <image-point name="portrait" x="0.28125" y="0.578947" />
+                            <image-point name="skill1" x="0.40625" y="0.421053" />
+                            <image-point name="skill2" x="0.5" y="0.421053" />
+                            <image-point name="skill3" x="0.59375" y="0.421053" />
+                            <image-point name="skill4" x="0.6875" y="0.421053" />
+                            <image-point name="healthbar" x="0.375" y="0.684211" />
+                            <image-point name="item1" x="0.791667" y="0.368421" />
+                            <image-point name="item2" x="0.864583" y="0.368421" />
+                            <image-point name="item3" x="0.9375" y="0.368421" />
+                            <image-point name="item4" x="0.791667" y="0.631579" />
+                            <image-point name="item5" x="0.864583" y="0.631579" />
+                            <image-point name="shop" x="0.9375" y="0.631579" />
+                            <image-point name="statLevel" x="0.0416667" y="0.263158" />
+                            <image-point name="statAttack" x="0.0416667" y="0.421053" />
+                            <image-point name="statSpeed" x="0.0416667" y="0.578947" />
+                            <collision-poly>
+                                <point x="0.177083" y="0.157896" />
+                                <point x="0.822917" y="0.157896" />
+                                <point x="1" y="0.526316" />
+                                <point x="0.8125" y="0.842105" />
+                                <point x="0.1875" y="0.842105" />
+                                <point x="0" y="0.526316" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_scoreValue" sid="242989090152986">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_portraitMage" sid="991646473010029">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="232408352791352" speed="5">
+                        <frame duration="1" hotspotX="0.64" hotspotY="0.64" original-source="C:\Users\Jerry\Documents\Unsorted\Github\defendTower-game\Animations\obj_playerMage\Default\000.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_health" sid="696595905225719">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="174180755115702" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.1" y="0.1" />
+                                <point x="0.811111" y="0.1" />
+                                <point x="0.811111" y="0.9" />
+                                <point x="0.1" y="0.9" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_healthTower" sid="943948333106767">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="421378570642550" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\Jerry\Desktop\Sprite-0003.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_gameOverText" sid="826924889830431">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_enemyCount" sid="139170656680795">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_eventsDescText" sid="112084122033562">
+                <plugin id="Text" />
+                <container>
+                    <type>ui_eventsPanel</type>
+                    <type>ui_eventsNameText</type>
+                    <type>ui_eventsDescText</type>
+                    <type>ui_eventsCommandText</type>
+                </container>
+            </object-type>
+            <object-type name="ui_eventsCommandText" sid="592449787803750">
+                <plugin id="Text" />
+                <container>
+                    <type>ui_eventsPanel</type>
+                    <type>ui_eventsNameText</type>
+                    <type>ui_eventsDescText</type>
+                    <type>ui_eventsCommandText</type>
+                </container>
+            </object-type>
+            <object-type name="ui_eventsNameText" sid="405013360862378">
+                <plugin id="Text" />
+                <container>
+                    <type>ui_eventsPanel</type>
+                    <type>ui_eventsNameText</type>
+                    <type>ui_eventsDescText</type>
+                    <type>ui_eventsCommandText</type>
+                </container>
+            </object-type>
+            <object-type name="ui_getGoldPopup" sid="697465874875512">
+                <plugin id="Sprite" />
+                <container>
+                    <type>ui_getGoldPopup</type>
+                    <type>ui_getGoldPopupText</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="819155093710814" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="goldText" x="1.375" y="0.625" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_gameOverScore" sid="507739143056398">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_shopIcon" sid="281234277594168">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="505665650651218" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_item2" sid="421437170604970">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="523216495874096" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_returnTitleText" sid="207032330634797">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_timerCountText" sid="676866301398579">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_item5" sid="592054926799047">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="559392394007599" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_item4" sid="552547336292391">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="215035451528290" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_goldBar" sid="849280339286970">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="489859255501378">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620926252477698" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Text" x="0.289063" y="0.5" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_getGoldPopupText" sid="104338630719368">
+                <plugin id="Text" />
+                <container>
+                    <type>ui_getGoldPopup</type>
+                    <type>ui_getGoldPopupText</type>
+                </container>
+            </object-type>
+            <object-type name="ui_goldValue" sid="609154709929416">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_restartText" sid="618986322860277">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_waveEnemy" sid="571667644012146">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_eventsPanel" sid="249625408360279">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isDrawn" sid="942627489115728" type="boolean" />
+                    <instance-variable name="itemHovered" sid="377767705564158" type="number" />
+                </instance-variables>
+                <container>
+                    <type>ui_eventsPanel</type>
+                    <type>ui_eventsNameText</type>
+                    <type>ui_eventsDescText</type>
+                    <type>ui_eventsCommandText</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="243182541405979" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="toolTipName" x="0.035" y="0.04" />
+                            <image-point name="toolTipDescription" x="0.055" y="0.34" />
+                            <image-point name="toolTipCost" x="0.98" y="0.95" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_waveCount" sid="947765667741597">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_textHealth" sid="608074237007305">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_playerLevel" sid="218244794023249">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_playerAADamage" sid="550152512258832">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_playerAASpeed" sid="596637489985606">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_blocked" sid="768391777387808">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="422262738956833" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Items">
+            <object-type name="item_holyChalice" sid="893543609851368">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="117205040214921" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\87983754_683023965849104_6896070456202231808_n.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="item_bookEnlight" sid="533575161028772">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="999795501781032" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\88005293_193890115225118_9152052064795230208_n.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="item_sorcerersCap" sid="901293592553338">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="580236340389376" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\88302154_500239820585052_5488232759858036736_n.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="item_hourglassFate" sid="480411810859427">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="200449211096893" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\88261127_809828162840377_3737314342924713984_n.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="item_catalystMagic" sid="575174183373443">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="299044372545106" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\88140316_217377779455919_4177773787569192960_n.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="item_levelUp" sid="624301360169731">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="874286587438830" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\11400314\Desktop\new\88140316_217377779455919_4177773787569192960_n.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="MainMenu">
+            <object-type name="parallax_mountainNear" sid="278389024670898">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="902758432122895" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_mountain_pack\parallax_mountain_pack\layers\parallax-mountain-mountains.png">
+                            <collision-poly>
+                                <point x="0.1875" y="0.6375" />
+                                <point x="0.5" y="0.68125" />
+                                <point x="0.863971" y="0.4625" />
+                                <point x="0.935662" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0.306985" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="parallax_treesBig" sid="808128557211902">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="244574356563101" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_mountain_pack\parallax_mountain_pack\layers\parallax-mountain-foreground-trees.png">
+                            <collision-poly>
+                                <point x="0.226103" y="0.76875" />
+                                <point x="0.737132" y="0.89375" />
+                                <point x="0.96875" y="0.89375" />
+                                <point x="0.0514706" y="0.825" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="parallax_mountainBig" sid="403713657168693">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="799160224260284" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_mountain_pack\parallax_mountain_pack\layers\parallax-mountain-montain-far.png">
+                            <collision-poly>
+                                <point x="0.338235" y="0.575" />
+                                <point x="0.5" y="0.5125" />
+                                <point x="0.647059" y="0.6" />
+                                <point x="0.477941" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0.411765" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="panel_titleMenu" sid="239240246651610">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Outline\green.png" />
+            </object-type>
+            <object-type name="btn_optionButton1" sid="851286041180016">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green.png" />
+            </object-type>
+            <object-type name="btn_quitButton2" sid="716188714034644">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\red_pressed.png" />
+            </object-type>
+            <object-type name="btn_startButton1" sid="651265195098285">
+                <plugin id="NinePatch" />
+                <container>
+                    <type>btn_startButton1</type>
+                    <type>btn_startButton2</type>
+                </container>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green.png" />
+            </object-type>
+            <object-type name="btn_quitButton1" sid="720610391202973">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\red.png" />
+            </object-type>
+            <object-type name="btn_optionButton2" sid="389224161590514">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green_pressed.png" />
+            </object-type>
+            <object-type name="btn_startButton2" sid="274231171022262">
+                <plugin id="NinePatch" />
+                <container>
+                    <type>btn_startButton1</type>
+                    <type>btn_startButton2</type>
+                </container>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green_pressed.png" />
+            </object-type>
+            <object-type name="panel_mainMenu" sid="321046001750366">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Ancient\brown.png" />
+            </object-type>
+            <object-type name="parallax_sky" sid="305578011498798">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="433435159264136">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="145057667232725" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_mountain_pack\parallax_mountain_pack\layers\parallax-mountain-bg.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="text_startButton1" sid="134415134552175">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_quitButton1" sid="380540349906923">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_optionsButton1" sid="146110791081779">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="parallax_treesNear" sid="284840224829750">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="694669492658956" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_mountain_pack\parallax_mountain_pack\layers\parallax-mountain-trees.png">
+                            <collision-poly>
+                                <point x="0.229779" y="0.78125" />
+                                <point x="0.5" y="0.88125" />
+                                <point x="0.773897" y="0.76875" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="btn_controlButton2" sid="699367055856177">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\blue_pressed.png" />
+            </object-type>
+            <object-type name="btn_creditsButton1" sid="528100303389589">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\blue.png" />
+            </object-type>
+            <object-type name="btn_heroSelectBack1" sid="652642283785742">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="675227844044164">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\yellow.png" />
+            </object-type>
+            <object-type name="btn_playButton1" sid="987894625299158">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="604385339079220">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green.png" />
+            </object-type>
+            <object-type name="btn_options2" sid="160876745891727">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\yellow_pressed.png" />
+            </object-type>
+            <object-type name="btn_restart1" sid="423734598133104">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green.png" />
+            </object-type>
+            <object-type name="btn_playButton2" sid="928427996615398">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green_pressed.png" />
+            </object-type>
+            <object-type name="btn_returnTitle1" sid="137716436498966">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\red.png" />
+            </object-type>
+            <object-type name="btn_restart2" sid="199972822637157">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\green_pressed.png" />
+            </object-type>
+            <object-type name="btn_returnTitle2" sid="363006923730804">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\red_pressed.png" />
+            </object-type>
+            <object-type name="btn_options1" sid="561289851484368">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="780343544047398">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\yellow.png" />
+            </object-type>
+            <object-type name="btn_heroSelectBack2" sid="904271156896140">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\yellow_pressed.png" />
+            </object-type>
+            <object-type name="btn_soundButton2" sid="871368105403569">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\blue_pressed.png" />
+            </object-type>
+            <object-type name="btn_soundButton1" sid="544774042038133">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\blue.png" />
+            </object-type>
+            <object-type name="btn_sound" sid="462835186636007">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\yellow.png" />
+            </object-type>
+            <object-type name="text_controlButton1" sid="230590553092630">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_playButton1" sid="414444347116100">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="btn_creditsButton2" sid="422102410870096">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\blue_pressed.png" />
+            </object-type>
+            <object-type name="btn_controlButton1" sid="581322011433914">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Colored\blue.png" />
+            </object-type>
+            <object-type name="panel_heroSelect1" sid="505278499596350">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="461453892535107">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Ancient\tan.png" />
+            </object-type>
+            <object-type name="panel_heroSelect2" sid="254460859278012">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="404926249810337">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Ancient\tan.png" />
+            </object-type>
+            <object-type name="panel_optionsMenu" sid="679648324323319">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="719500305112084">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Jerry\Documents\Unsorted\Assets\Sprites\PixelUIpack by Kenny.nl\9-Slice\Ancient\brown.png" />
+            </object-type>
+            <object-type name="text_creditsButton1" sid="735637770170467">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_gameVersion" sid="877465085249701">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="hero_selectedText" sid="534860656313835">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="panel_heroSelectMage" sid="586039443207596">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="256182749520062" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Documents\Unsorted\Github\defendTower-game\Animations\obj_playerMage\Default\000.png">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.125" />
+                                <point x="0.875" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0.125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="4HMLogo" sid="532089204903480">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="840881690583961">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="563556478913896" speed="5">
+                        <frame duration="1" hotspotX="0.503546" hotspotY="0.50289" original-source="C:\Users\Jerry\Desktop\4HMLogo.png">
+                            <collision-poly>
+                                <point x="0.0921986" y="0.0751445" />
+                                <point x="0.496454" y="0.184971" />
+                                <point x="0.751773" y="0.202312" />
+                                <point x="1" y="0.49711" />
+                                <point x="0.815603" y="0.849711" />
+                                <point x="0.496454" y="1" />
+                                <point x="0.361702" y="0.49711" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="text_heroSelectStats1" sid="730778751840792">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_loadingStart" sid="781258695513886">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_optionsBack" sid="361023620863831">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_presentsStart" sid="344554062089644">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="628797849055005">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="text_soundButton1" sid="828460731012551">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="text_heroSelectBack1" sid="437844378927481">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ui_mainMenuTitle" sid="612248396380305">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Pathing">
+            <object-type name="pathing1" sid="873337618356567">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="604547148456886" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="pathing2" sid="335858264585210">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="744262734601494" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="pathing3" sid="653116878379485">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="514043979213029" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="pathing4" sid="476946745965396">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="963644820716197" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="pathing5" sid="329346515246554">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="716883397126054" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_spawner3" sid="535282936094099">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="path" sid="468836561897564" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="962352967323513" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_spawner2" sid="522946155954190">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="path" sid="692959562292746" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="817268457041256" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_spawner" sid="266347554607130">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="path" sid="869732493330701" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="155262673623005" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TiledPathingWall" sid="694882399241295">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="410836316711278">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\11400314\Downloads\87545946_1430518270442956_476392871914635264_n.png" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Array">
+            <object-type global="1" name="inventoryArray" sid="573710052973619">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="shopArray" sid="694897658144115">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="playerDictionary" sid="205716771670651">
+                <plugin id="Dictionary" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Parallax">
+            <object-type name="parallax_forest" sid="147086442058909">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Gamma">
+                        <effect id="gamma" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="674343254948069" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_forest_pack web\parallax_forest_pack web\layers\parallax-forest-back-trees.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="parallax_forestFront" sid="431563685323994">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Gamma">
+                        <effect id="gamma" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="310871092873114" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_forest_pack web\parallax_forest_pack web\layers\parallax-forest-front-trees.png">
+                            <collision-poly>
+                                <point x="0.172794" y="0.29375" />
+                                <point x="0.5" y="0.05625" />
+                                <point x="0.691176" y="0.525" />
+                                <point x="0.691176" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0.176471" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="parallax_forestLight" sid="924565521263220">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Gamma">
+                        <effect id="gamma" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="794923614612106" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_forest_pack web\parallax_forest_pack web\layers\parallax-forest-lights.png">
+                            <collision-poly>
+                                <point x="0.0698529" y="0.11875" />
+                                <point x="0.5" y="0.2625" />
+                                <point x="0.838235" y="0.275" />
+                                <point x="0.463235" y="0.0875" />
+                                <point x="0.5" y="0.40625" />
+                                <point x="0.378676" y="0.35625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="parallax_forestMiddle" sid="138414131931100">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Gamma">
+                        <effect id="gamma" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="417492219730947" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Jerry\Desktop\parallax_forest_pack web\parallax_forest_pack web\layers\parallax-forest-middle-trees.png">
+                            <collision-poly>
+                                <point x="0.110294" y="0.1875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.977941" y="0.0375" />
+                                <point x="0.9375" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0.113971" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="Mouse" sid="387042141381203">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Keyboard" sid="974986071181068">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type global="1" name="XML" sid="368658486712764">
+            <plugin id="XML" />
+        </object-type>
+        <object-type name="AJAX" sid="414378555055994">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="Browser" sid="336574045868811">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Function" sid="486039354273799">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Audio" sid="627070738790344">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Touch" sid="995347659947304">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Download" sid="832373726192589">
+            <plugin id="Button" />
+        </object-type>
+        <object-type global="1" name="JSON" sid="865489652332395">
+            <plugin id="JSON" />
+        </object-type>
+        <object-type name="obj_enemyBossArcher" sid="336320258315857">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="619032477943752" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jerry\Documents\Unsorted\Assets\defendTowerOtherSprites\87672814_929216704162029_5054980102832521216_n.png">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.5" y="0.09375" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.375" y="0.625" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lightSource" sid="385344979314373">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="939607055084606" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="356313219992667" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="stunBulletEffects" plugin-id="Particles" sid="446995096276891">
+            <members>
+                <member>par_stunPath1</member>
+                <member>par_stunPath2</member>
+            </members>
+        </family>
+        <family name="enemyMinions" plugin-id="Sprite" sid="481465505949804">
+            <members>
+                <member>obj_archerTower</member>
+                <member>obj_enemyBossArcher</member>
+                <member>obj_enemyCatapult</member>
+                <member>obj_enemyFlyer</member>
+                <member>obj_enemyMelee</member>
+                <member>obj_enemyRanged</member>
+                <member>obj_enemyTank</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="name" sid="834433115974547" type="string" />
+                <instance-variable name="curHealth" sid="243417613143421" type="number" />
+                <instance-variable name="maxHealth" sid="727689250653635" type="number" />
+                <instance-variable name="isStunned" sid="301163740822040" type="boolean" />
+                <instance-variable name="isRanged" sid="694574192740859" type="boolean" />
+                <instance-variable name="attackRange" sid="460233006034924" type="number" />
+                <instance-variable name="attackCoolDown" sid="950014824277994" type="number" />
+                <instance-variable name="isHealthShown" sid="925924693099836" type="boolean" />
+                <instance-variable name="suicideDamage" sid="398712028149265" type="number" />
+                <instance-variable name="goldReward" sid="673684231576329" type="number" />
+                <instance-variable name="pathToFollow" sid="759873127371584" type="number" />
+                <instance-variable name="hasSpawned" sid="756675358427564" type="boolean" />
+                <instance-variable name="isTank" sid="308802298544108" type="number" />
+                <instance-variable name="onlyAttackTower" sid="242273309126646" type="boolean" />
+                <instance-variable name="notActuallyEnemy" sid="117269791580577" type="boolean" />
+                <instance-variable name="isBoss" sid="582154325700548" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="550799604033065">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="MoveTo" sid="364562424394495">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
+        </family>
+        <family name="playableCharacters" plugin-id="Sprite" sid="888650310795104">
+            <members>
+                <member>obj_playerMage</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="name" sid="342854373911485" type="string" />
+                <instance-variable name="curLevel" sid="214137382198855" type="number" />
+                <instance-variable name="curHealth" sid="310226730767808" type="number" />
+                <instance-variable name="maxHealth" sid="285557598325728" type="number" />
+                <instance-variable name="totalScore" sid="988202616579625" type="number" />
+                <instance-variable name="skill_1_level" sid="882597254514887" type="number" />
+                <instance-variable name="skill_2_level" sid="795217063457725" type="number" />
+                <instance-variable name="skill_3_level" sid="825098547388441" type="number" />
+                <instance-variable name="skill_4_level" sid="745830180881583" type="number" />
+                <instance-variable name="equipped_1_slot" sid="743993359069652" type="boolean" />
+                <instance-variable name="equipped_2_slot" sid="814368090699764" type="boolean" />
+                <instance-variable name="equipped_3_slot" sid="791657054543503" type="boolean" />
+                <instance-variable name="equipped_4_slot" sid="931066349689260" type="boolean" />
+                <instance-variable name="equipped_5_slot" sid="466004839419437" type="boolean" />
+                <instance-variable name="curGold" sid="583598705422442" type="number" />
+                <instance-variable name="selected" sid="841916654112697" type="boolean" />
+                <instance-variable name="lightingID" sid="125836203360349" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="913686720740143">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="564546276853182">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="119560711990514">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="600447510191863">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="MoveTo" sid="670734409884790">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="bouncingProjectiles" plugin-id="Sprite" sid="749633539684510">
+            <members>
+                <member>proj_laser</member>
+                <member>proj_manaBullet</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet" sid="217538027916059">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="648063220008704">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="playerBulletProjectiles" plugin-id="Sprite" sid="675780570612767">
+            <members>
+                <member>proj_laser</member>
+                <member>proj_manaBullet</member>
+                <member>proj_stunBullet</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="damage" sid="665802394161755" type="number" />
+                <instance-variable name="isFire" sid="274731185917959" type="boolean" />
+            </instance-variables>
+        </family>
+        <family name="playableTowers" plugin-id="Sprite" sid="656702669783686">
+            <members>
+                <member>obj_towerMage</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="curHealth" sid="323399217072313" type="number" />
+                <instance-variable name="curArmor" sid="226770695820658" type="number" />
+                <instance-variable name="maxHealth" sid="475069951078511" type="number" />
+                <instance-variable name="maxArmor" sid="725447072512255" type="number" />
+                <instance-variable name="isSelected" sid="207210332516709" type="boolean" />
+            </instance-variables>
+        </family>
+        <family name="playableItems" plugin-id="Sprite" sid="580216549207888">
+            <members>
+                <member>item_bookEnlight</member>
+                <member>item_catalystMagic</member>
+                <member>item_holyChalice</member>
+                <member>item_hourglassFate</member>
+                <member>item_levelUp</member>
+                <member>item_sorcerersCap</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="index" sid="920035883585244" type="number" />
+                <instance-variable name="name" sid="621967594712241" type="string" />
+                <instance-variable name="description" sid="983831719514904" type="string" />
+                <instance-variable name="isSelected" sid="540489202519218" type="boolean" />
+                <instance-variable name="xPosition" sid="344397400340227" type="number" />
+                <instance-variable name="yPosition" sid="527938699224289" type="number" />
+                <instance-variable name="itemCost" sid="656284299741176" type="number" />
+                <instance-variable name="defaultPositionRecorded" sid="662139810852485" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LiteTween" sid="791092667917259">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="horizontalScaleBars" plugin-id="Sprite" sid="171927002748794">
+            <members>
+                <member>ui_health</member>
+                <member>ui_healthTower</member>
+                <member>ui_iconProgress</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="maxSize" sid="859527863263237" type="number" />
+            </instance-variables>
+        </family>
+        <family name="UIScaleBars" plugin-id="NinePatch" sid="417413877793593">
+            <members>
+                <member>ui_towerArmor</member>
+                <member>ui_towerHealth</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="maxSize" sid="102826822324812" type="number" />
+            </instance-variables>
+        </family>
+        <family name="uiPlayerequipped" plugin-id="Sprite" sid="374564895563889">
+            <members>
+                <member>ui_item1</member>
+                <member>ui_item2</member>
+                <member>ui_item3</member>
+                <member>ui_item4</member>
+                <member>ui_item5</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="isBought" sid="935802473378943" type="boolean" />
+            </instance-variables>
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                </effect-type>
+            </effects>
+        </family>
+        <family name="clickableMainButtons" plugin-id="NinePatch" sid="932804389479600">
+            <members>
+                <member>btn_controlButton1</member>
+                <member>btn_creditsButton1</member>
+                <member>btn_heroSelectBack1</member>
+                <member>btn_optionButton1</member>
+                <member>btn_options1</member>
+                <member>btn_playButton1</member>
+                <member>btn_quitButton1</member>
+                <member>btn_soundButton1</member>
+                <member>btn_startButton1</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="state" sid="351629969710528" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LiteTween2" sid="593491516816646">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="mainMenuToolTips" plugin-id="Sprite" sid="748442097489524">
+            <members>
+                <member>panel_heroSelectMage</member>
+                <member>ui_blinkIcon</member>
+                <member>ui_fireBallIcon</member>
+                <member>ui_laserIcon</member>
+                <member>ui_stunIcon</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="toolTipName" sid="547812335040280" type="string" />
+                <instance-variable name="toolTipDescription" sid="120356973863114" type="string" />
+            </instance-variables>
+        </family>
+        <family name="enemyProjectiles" plugin-id="Sprite" sid="649314822673498">
+            <members>
+                <member>proj_enemyArrows</member>
+                <member>proj_enemyCatapult</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="damage" sid="213336941077668" type="number" />
+                <instance-variable name="targetTower" sid="763224297200928" type="boolean" />
+            </instance-variables>
+        </family>
+        <family name="allTexts" plugin-id="Text" sid="419960246224778">
+            <members>
+                <member>hero_selectedText</member>
+                <member>text_controlButton1</member>
+                <member>text_creditsButton1</member>
+                <member>text_gameVersion</member>
+                <member>text_heroSelectBack1</member>
+                <member>text_heroSelectStats1</member>
+                <member>text_loadingStart</member>
+                <member>text_optionsBack</member>
+                <member>text_optionsButton1</member>
+                <member>text_playButton1</member>
+                <member>text_quitButton1</member>
+                <member>text_soundButton1</member>
+                <member>text_startButton1</member>
+                <member>ui_enemyCount</member>
+                <member>ui_eventsCommandText</member>
+                <member>ui_eventsDescText</member>
+                <member>ui_eventsNameText</member>
+                <member>ui_gameOverScore</member>
+                <member>ui_gameOverText</member>
+                <member>ui_getGoldPopupText</member>
+                <member>ui_goldValue</member>
+                <member>ui_mainMenuTitle</member>
+                <member>ui_playerAADamage</member>
+                <member>ui_playerAASpeed</member>
+                <member>ui_playerLevel</member>
+                <member>ui_restartText</member>
+                <member>ui_returnTitleText</member>
+                <member>ui_scoreValue</member>
+                <member>ui_storeBuyText</member>
+                <member>ui_storeCharacterText</member>
+                <member>ui_storeItemDescText</member>
+                <member>ui_storeItemNameText</member>
+                <member>ui_storeTitleText</member>
+                <member>ui_storeTitleText2</member>
+                <member>ui_storeTowerText</member>
+                <member>ui_textHealth</member>
+                <member>ui_timerCountText</member>
+                <member>ui_toolTipItemCost</member>
+                <member>ui_waveCount</member>
+                <member>ui_waveEnemy</member>
+            </members>
+        </family>
+        <family name="TweenablePatchElements" plugin-id="NinePatch" sid="212916822217332">
+            <members>
+                <member>btn_controlButton1</member>
+                <member>btn_controlButton2</member>
+                <member>btn_creditsButton1</member>
+                <member>btn_creditsButton2</member>
+                <member>btn_heroSelectBack1</member>
+                <member>btn_heroSelectBack2</member>
+                <member>btn_optionButton1</member>
+                <member>btn_optionButton2</member>
+                <member>btn_options1</member>
+                <member>btn_options2</member>
+                <member>btn_playButton1</member>
+                <member>btn_playButton2</member>
+                <member>btn_quitButton1</member>
+                <member>btn_quitButton2</member>
+                <member>btn_restart1</member>
+                <member>btn_restart2</member>
+                <member>btn_returnTitle1</member>
+                <member>btn_returnTitle2</member>
+                <member>btn_sound</member>
+                <member>btn_soundButton1</member>
+                <member>btn_soundButton2</member>
+                <member>btn_startButton1</member>
+                <member>btn_startButton2</member>
+                <member>panel_heroSelect1</member>
+                <member>panel_heroSelect2</member>
+                <member>panel_mainMenu</member>
+                <member>panel_optionsMenu</member>
+                <member>panel_titleMenu</member>
+                <member>ui_frame</member>
+            </members>
+            <behaviors>
+                <behavior-type name="LiteTween4" sid="910900743197077">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Family1" plugin-id="Sprite" sid="190547314999857">
+            <members>
+                <member>ui_blinkIcon</member>
+                <member>ui_fireBallIcon</member>
+                <member>ui_laserIcon</member>
+                <member>ui_stunIcon</member>
+            </members>
+        </family>
+        <family name="TweenableSpriteElements" plugin-id="Sprite" sid="282287287085325">
+            <members>
+                <member>ui_bottomPanels</member>
+                <member>ui_goldBar</member>
+            </members>
+            <behaviors>
+                <behavior-type name="LiteTween2" sid="454883074225833">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>StraightLinearMap.xml</layout>
+        <layout>AssetsMap.xml</layout>
+        <layout>MainMenuMap.xml</layout>
+        <layout>LoadingStart.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>sht_Player.xml</event-sheet>
+        <event-sheet>sht_Enemy.xml</event-sheet>
+        <event-sheet>sht_StraightLinearMap.xml</event-sheet>
+        <event-sheet>sht_MainMenu.xml</event-sheet>
+        <event-sheet>sht_Shop.xml</event-sheet>
+        <event-sheet>sht_Tower.xml</event-sheet>
+        <event-sheet>sht_UIElements.xml</event-sheet>
+        <event-sheet>sht_Events.xml</event-sheet>
+        <event-sheet>sht_Loading.xml</event-sheet>
+        <event-sheet>sht_GlobalVariables.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="16" />
+        <global-instance type="Keyboard" uid="17" />
+        <global-instance type="AJAX" uid="41" />
+        <global-instance type="Browser" uid="42" />
+        <global-instance type="Function" uid="46" />
+        <global-instance type="Audio" uid="114">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Touch" uid="116">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="Laser Beam.ogg" />
+        <file name="Bass-ic Error.ogg" />
+        <file name="Burp.ogg" />
+        <file name="Circuit.ogg" />
+        <file name="Power.ogg" />
+        <file name="Decision1.ogg" />
+        <file name="Decision2.ogg" />
+        <file name="Cardboard Hit 12 Short Crush.ogg" />
+        <file name="Ding Sound Effect.ogg" />
+        <file name="fireballExplosion.ogg" />
+        <file name="shieldHit.ogg" />
+        <file name="shieldRestored.ogg" />
+        <file name="tankHitLaser.ogg" />
+        <file name="towerHit.ogg" />
+        <file name="mageShootSound.ogg" />
+        <file name="catapultShoot.ogg" />
+        <file name="rangedEnemyShoot.ogg" />
+        <file name="eventsAdvance.ogg" />
+        <file name="mageShootSound2.ogg" />
+        <file name="lowHealthAlert.ogg" />
+        <file name="wallErectSound.ogg" />
+        <file name="wallDespawned.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="ancient-winds.ogg" />
+        <file name="failing-defense-battleLoop.ogg" />
+        <file name="failing-defense-dangerLoop.ogg" />
+        <file name="failing-defense-startBattleLoop.ogg" />
+        <file name="failing-defense-startDangerLoop.ogg" />
+        <file name="failing-defense-waiting.ogg" />
+        <file name="anxiety.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file name="Mage.json" />
+        <file name="Map1.json" />
+        <file name="Items.json" />
+        <file name="stylesheet.css" />
+        <file name="tight_pixel-webfont.woff" />
+        <file name="tight_pixel-webfont.woff2" />
+    </files-folder>
+</c2project>

@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_Shop</name>
+    <events>
+        <variable constant="0" name="shopDrawn" sid="180930468808496" static="0" type="number">0</variable>
+        <variable constant="0" name="storeCategory" sid="185160363954384" static="0" type="text">character</variable>
+        <event-block sid="153864052585099">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="649228849921680" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set size" sid="452622415837456" type="shopArray">
+                    <param id="0" name="Width">5</param>
+                    <param id="1" name="Height">6</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="1" name="Set size" sid="226536491846081" type="inventoryArray">
+                    <param id="0" name="Width">5</param>
+                    <param id="1" name="Height">6</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="988687448279078" type="System">
+                    <param id="0" name="Group name">&quot;Click and Drag then Buy Items&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="371119699430876" type="System">
+                    <param id="0" name="Group name">&quot;Hover / ToolTips Shop Panel&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="262139199267001" type="System">
+                    <param id="0" name="Variable">shopDrawn</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="656160428172656" title="Store Draw and Toggle">
+            <sub-events>
+                <event-block sid="826247325602946">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="932432755149267" type="Keyboard">
+                            <param id="0" name="Key">90</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="993592998235155" type="ui_storePanel">
+                            <param id="0" name="Instance variable">keyTPressed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="839984474181699" type="ui_storePanel">
+                            <param id="0" name="Instance variable">keyTPressed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="603155456559039">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="427307604605094" type="ui_storePanel">
+                            <param id="0" name="Instance variable">keyTPressed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="583359101054920" type="ui_storePanel">
+                            <param id="0" name="Instance variable">showStore</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="653114979794138" type="ui_storePanel">
+                            <param id="0" name="Instance variable">keyTPressed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="148473694796813">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="429309883520870" type="ui_storePanel">
+                            <param id="0" name="Instance variable">showStore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="221605220905411" type="System">
+                            <param id="0" name="Layer">(&quot;Store&quot;)</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="381150513283436" type="System">
+                            <param id="0" name="Layer">(&quot;StoreScroll&quot;)</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="153780660516018" type="System">
+                            <param id="0" name="Group name">&quot;Click and Drag then Buy Items&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="246501345147296" type="System">
+                            <param id="0" name="Group name">&quot;Hover / ToolTips Shop Panel&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="520809670044162">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="708150782351923" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="711968059392591" type="System">
+                            <param id="0" name="Layer">(&quot;Store&quot;)</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="831887515740019" type="System">
+                            <param id="0" name="Layer">(&quot;StoreScroll&quot;)</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="625384272806936" type="System">
+                            <param id="0" name="Group name">&quot;Click and Drag then Buy Items&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="816213781301184" type="System">
+                            <param id="0" name="Group name">&quot;Hover / ToolTips Shop Panel&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="216973449709156" title="Char Category">
+                    <sub-events>
+                        <comment>Make Array of store items, store index, name, uid</comment>
+                        <event-block any="1" sid="528222692252673">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="114829744609437" type="System">
+                                    <param id="0" name="Layer">(&quot;Store&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="134525150307519">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="841727487206807" type="System">
+                                            <param id="0" name="Variable">shopDrawn</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="indexToDraw" sid="446101435242474" static="0" type="number">0</variable>
+                                        <variable constant="0" name="columnToDraw" sid="237904662325923" static="0" type="number">1</variable>
+                                        <event-block sid="307326138942120">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="970500815872402" type="System">
+                                                    <param id="0" name="Object">playableItems</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set at XYZ" sid="196870520937077" type="shopArray">
+                                                    <param id="0" name="X">indexToDraw</param>
+                                                    <param id="1" name="Y">0</param>
+                                                    <param id="2" name="Z">0</param>
+                                                    <param id="3" name="Value">playableItems.index</param>
+                                                </action>
+                                                <action id="4" name="Set at XYZ" sid="124403238472487" type="shopArray">
+                                                    <param id="0" name="X">indexToDraw</param>
+                                                    <param id="1" name="Y">1</param>
+                                                    <param id="2" name="Z">0</param>
+                                                    <param id="3" name="Value">playableItems.name</param>
+                                                </action>
+                                                <action id="4" name="Set at XYZ" sid="645023116228467" type="shopArray">
+                                                    <param id="0" name="X">indexToDraw</param>
+                                                    <param id="1" name="Y">2</param>
+                                                    <param id="2" name="Z">0</param>
+                                                    <param id="3" name="Value">playableItems.UID</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="247650369673495" type="System">
+                                                    <param id="0" name="Variable">indexToDraw</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="151205055825166">
+                                            <conditions>
+                                                <condition id="-24" name="For Each (ordered)" sid="936808505434977" type="System">
+                                                    <param id="0" name="Object">playableItems</param>
+                                                    <param id="1" name="Expression">playableItems.index</param>
+                                                    <param id="2" name="Order">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-26" name="Move to layer" sid="920206906506546" type="playableItems">
+                                                    <param id="0" name="Layer">(&quot;Store&quot;)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="329628864665642">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="316023605284427" type="System">
+                                                            <param id="0" name="First value">playableItems.index % 2</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Set position" sid="790514986495846" type="playableItems">
+                                                            <param id="0" name="X">ui_storePanel.X - (ui_storePanel.Width / 4)</param>
+                                                            <param id="1" name="Y">100 + (columnToDraw * 80)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="184274159414660">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="949495299084045" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Set position" sid="509186624464762" type="playableItems">
+                                                            <param id="0" name="X">ui_storePanel.X + (ui_storePanel.Width / 4)</param>
+                                                            <param id="1" name="Y">100 + (columnToDraw * 80)</param>
+                                                        </action>
+                                                        <action id="-10" name="Add to" sid="811490860154794" type="System">
+                                                            <param id="0" name="Variable">columnToDraw</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="187890988936738">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="708651855598491" type="System">
+                                                    <param id="0" name="Variable">shopDrawn</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="832978604657690" title="Click and Drag then Buy Items">
+            <sub-events>
+                <event-block sid="360368105506728">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="357276088707993" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">playableItems</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="160766092078149" type="playableItems">
+                            <param id="0" name="Instance variable">isSelected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="491102028652357" type="playableItems">
+                            <param id="0" name="Instance variable">isSelected</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="889147184230592" type="ui_storePanel">
+                            <param id="0" name="Instance variable">itemSelectedUID</param>
+                            <param id="1" name="Value">playableItems.UID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="470977195887827" type="playableItems">
+                            <param id="0" name="Instance variable">xPosition</param>
+                            <param id="1" name="Value">Self.X</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="719594795955368" type="playableItems">
+                            <param id="0" name="Instance variable">yPosition</param>
+                            <param id="1" name="Value">Self.Y</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="704960332865022" type="playableItems">
+                            <param id="0" name="Instance variable">defaultPositionRecorded</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="LiteTween" id="4" name="Set tweened property" sid="704087595230158" type="playableItems">
+                            <param id="0" name="Tweened property">0</param>
+                        </action>
+                        <action behavior="LiteTween" id="3" name="Set target" sid="635489906638412" type="playableItems">
+                            <param id="0" name="Target is">0</param>
+                            <param id="1" name="Relativity">0</param>
+                            <param id="2" name="Value">Self.xPosition</param>
+                        </action>
+                        <action behavior="LiteTween" id="3" name="Set target" sid="429115808141389" type="playableItems">
+                            <param id="0" name="Target is">1</param>
+                            <param id="1" name="Relativity">0</param>
+                            <param id="2" name="Value">Self.yPosition</param>
+                        </action>
+                        <action behavior="LiteTween" id="1" name="Set duration" sid="450750403333751" type="playableItems">
+                            <param id="0" name="Duration">1</param>
+                        </action>
+                        <action behavior="LiteTween" id="5" name="Set easing" sid="561307151158602" type="playableItems">
+                            <param id="0" name="Function">20</param>
+                        </action>
+                        <action behavior="LiteTween" id="15" name="Seek" sid="799955692694796" type="playableItems">
+                            <param id="0" name="Seek to">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="940523166267553">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="488794508928992" type="playableItems">
+                            <param id="0" name="Instance variable">isSelected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="194180437649129" type="playableItems">
+                            <param id="0" name="X">Mouse.X(&quot;Store&quot;)</param>
+                            <param id="1" name="Y">Mouse.Y(&quot;Store&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="897839619341330">
+                            <conditions>
+                                <condition id="3" name="On button released" sid="547204196219197" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="699901634915722">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="442073432166880" type="Mouse">
+                                            <param id="0" name="Object">ui_storeBuyArea</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="823918482226763" type="playableItems">
+                                            <param id="0" name="Instance variable">itemCost</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">currentGold</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="729290346694627" type="System">
+                                            <param id="0" name="Object to create">par_buyExplo</param>
+                                            <param id="1" name="Layer">(&quot;Store&quot;)</param>
+                                            <param id="2" name="X">Mouse.X(&quot;Store&quot;)</param>
+                                            <param id="3" name="Y">Mouse.Y(&quot;Store&quot;)</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="843354368773257" type="System">
+                                            <param id="0" name="Variable">currentGold</param>
+                                            <param id="1" name="Value">playableItems.itemCost</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="983137612467722" type="playableItems">
+                                            <param id="0" name="Instance variable">isSelected</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="699164538682669">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="280212946834464" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="926797743873504" type="playableCharacters">
+                                                    <param id="0" name="Instance variable">equipped_1_slot</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="266288948752728" type="Function">
+                                                    <param id="0" name="Name">&quot;updatePlayerInventory&quot;</param>
+                                                    <param id="1" name="Parameter {n}">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="440279051233968">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="230760329567003" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="483232813409203" type="playableCharacters">
+                                                    <param id="0" name="Instance variable">equipped_2_slot</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="152939793049021" type="Function">
+                                                    <param id="0" name="Name">&quot;updatePlayerInventory&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="384555266437621">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="209990410611790" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="765047332951193" type="playableCharacters">
+                                                    <param id="0" name="Instance variable">equipped_3_slot</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="238636130355359" type="Function">
+                                                    <param id="0" name="Name">&quot;updatePlayerInventory&quot;</param>
+                                                    <param id="1" name="Parameter {n}">3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="430030537187926">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="911948419598570" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="312540366450039" type="playableCharacters">
+                                                    <param id="0" name="Instance variable">equipped_4_slot</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="445141545309117" type="Function">
+                                                    <param id="0" name="Name">&quot;updatePlayerInventory&quot;</param>
+                                                    <param id="1" name="Parameter {n}">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="564460453810852">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="923045044770315" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="688276694547256" type="playableCharacters">
+                                                    <param id="0" name="Instance variable">equipped_5_slot</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="370424321060028" type="Function">
+                                                    <param id="0" name="Name">&quot;updatePlayerInventory&quot;</param>
+                                                    <param id="1" name="Parameter {n}">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="530078854183202">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="525256826501246" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="216671412747233" type="Function">
+                                                    <param id="0" name="Name">&quot;levelUp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="991587540066088" type="playableItems">
+                                                    <param id="0" name="Instance variable">itemCost</param>
+                                                    <param id="1" name="Value">floor(Self.itemCost * 1.8)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="304969181732327">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="344076834629081" type="playableItems">
+                                                    <param id="0" name="Instance variable">index</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="841589113154674" type="playableItems">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="905191008384109">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="364947281128086" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="678865478563742" type="playableItems">
+                                            <param id="0" name="Instance variable">isSelected</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="516488073979485">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="390034351171627" type="System" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="882496194426843" type="playableItems">
+                            <param id="0" name="Instance variable">defaultPositionRecorded</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="LiteTween" id="10" name="Start" sid="859025590075470" type="playableItems">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="show tooltip when item is hovered" inactive="1" sid="784288035911513" title="Hover / ToolTips Shop Panel">
+            <sub-events>
+                <event-block sid="446082140284968">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="656371071883730" type="Mouse">
+                            <param id="0" name="Object">playableItems</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="692488506122181" type="playableItems">
+                            <param id="0" name="Instance variable">isSelected</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="902768929712246" type="playableItems" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="165130522336127" type="ui_storePanel">
+                            <param id="0" name="Instance variable">itemHoveredUID</param>
+                            <param id="1" name="Value">playableItems.UID</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="317432239222918">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="911849221982094" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="972481464388575" type="System">
+                                    <param id="0" name="Object to create">ui_storeItemTooltip</param>
+                                    <param id="1" name="Layer">(&quot;Store&quot;)</param>
+                                    <param id="2" name="X">Mouse.X(&quot;Store&quot;)</param>
+                                    <param id="3" name="Y">Mouse.Y(&quot;Store&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="988767314611723" type="ui_storeItemNameText">
+                                    <param id="0" name="Text">Function.Call(&quot;findName&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="337205454162902" type="ui_storeItemNameText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipName&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="194877410064319" type="ui_storeItemDescText">
+                                    <param id="0" name="Text">Function.Call(&quot;findDescription&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="657185745461309" type="ui_storeItemDescText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipDescription&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="993792505059524" type="ui_toolTipItemCost">
+                                    <param id="0" name="Text">Function.Call(&quot;findCost&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="541131889092912" type="ui_toolTipItemCost">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipCost&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="934192907037855">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Set position" sid="503053697016435" type="ui_storeItemTooltip">
+                                    <param id="0" name="X">Mouse.X(&quot;Store&quot;)</param>
+                                    <param id="1" name="Y">Mouse.Y(&quot;Store&quot;)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="611072587084783" type="ui_storeItemNameText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipName&quot;</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="204601482690396" type="ui_storeItemDescText">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipDescription&quot;</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="281511800353145" type="ui_toolTipItemCost">
+                                    <param id="0" name="Object">ui_storeItemTooltip</param>
+                                    <param id="1" name="Image point (optional)">&quot;toolTipCost&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="567182889252925">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="655202250828846" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="169672597565742" type="ui_storeItemTooltip" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Function to find Selected Item&apos;s name in shop</comment>
+        <event-block sid="411958509704574">
+            <conditions>
+                <condition id="0" name="On function" sid="967091815976572" type="Function">
+                    <param id="0" name="Name">&quot;findName&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="613482492026152">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="958944112178263" type="System">
+                            <param id="0" name="Object">playableItems</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="944084064002159">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="227713976022376" type="System">
+                                    <param id="0" name="First value">ui_storePanel.itemHoveredUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">playableItems.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="109231243055636" type="Function">
+                                    <param id="0" name="Value">playableItems.name</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="455129567097158">
+            <conditions>
+                <condition id="0" name="On function" sid="892974828934079" type="Function">
+                    <param id="0" name="Name">&quot;findDescription&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="316725476552190">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="324986545810365" type="System">
+                            <param id="0" name="Object">playableItems</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="741986681331270">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="885512237104781" type="System">
+                                    <param id="0" name="First value">ui_storePanel.itemHoveredUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">playableItems.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="324911575194334" type="Function">
+                                    <param id="0" name="Value">playableItems.description</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="143688606130239">
+            <conditions>
+                <condition id="0" name="On function" sid="807920465776353" type="Function">
+                    <param id="0" name="Name">&quot;findCost&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="619084942848804">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="568883915164998" type="System">
+                            <param id="0" name="Object">playableItems</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="436783926535879">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="824903943116154" type="System">
+                                    <param id="0" name="First value">ui_storePanel.itemHoveredUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">playableItems.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="796863989266964" type="Function">
+                                    <param id="0" name="Value">playableItems.itemCost</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Debug</comment>
+        <event-block sid="728831425673451">
+            <conditions>
+                <condition id="0" name="On clicked" sid="581668578712456" type="Download" />
+            </conditions>
+            <actions>
+                <action id="12" name="Download" sid="939561765132523" type="inventoryArray">
+                    <param id="0" name="Filename">&quot;data.json&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="553481123905808">
+            <conditions>
+                <condition id="0" name="On function" sid="735379265777589" type="Function">
+                    <param id="0" name="Name">&quot;toggleStoreCategory&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="220480718591480">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="846480121885656" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;tower&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="120525171533256">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="225619475201113" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

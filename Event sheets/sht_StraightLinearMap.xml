@@ -1,0 +1,1728 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_StraightLinearMap</name>
+    <events>
+        <variable constant="0" name="currentWave" sid="861483905909155" static="0" type="number">1</variable>
+        <event-block sid="945052852829212">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="423222928015370" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Request project file" sid="913354695088610" type="AJAX">
+                    <param id="0" name="Tag">&quot;Map1&quot;</param>
+                    <param id="1" name="File">Map1.json</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="419015658412030">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="927349421930979" type="System">
+                            <param id="0" name="Variable">currentWave</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="786832130906436" type="System">
+                            <param id="0" name="Group name">&quot;UI Tweening Start&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="116218266630542" type="System">
+                            <param id="0" name="Group name">&quot;Spawning System&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="860680792606110" type="System">
+                            <param id="0" name="Group name">&quot;Game Over&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="903573043622991" type="System">
+                            <param id="0" name="Group name">&quot;Victory&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="227046067310587" type="System">
+                            <param id="0" name="Group name">&quot;Spawning System&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="990422384038939" type="System">
+                            <param id="0" name="Group name">&quot;Spawning System&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="996626357605264">
+                    <conditions />
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="358860499905748" type="System">
+                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                            <param id="1" name="Scale">0.5</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="667506899683104" type="System">
+                            <param id="0" name="Layer">&quot;TiledBackground-1&quot;</param>
+                            <param id="1" name="Scale">0.5</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="425365267273206" type="System">
+                            <param id="0" name="Layer">&quot;TiledBackground-2&quot;</param>
+                            <param id="1" name="Scale">0.5</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="464886933261601" type="System">
+                            <param id="0" name="Layer">&quot;Pathing&quot;</param>
+                            <param id="1" name="Scale">0.5</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="861888726738823" type="System">
+                            <param id="0" name="Layer">&quot;Nightshader&quot;</param>
+                            <param id="1" name="Scale">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="242344992375008">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="768278498112516" type="System">
+                            <param id="0" name="Object">horizontalScaleBars</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="182364928514766" type="horizontalScaleBars">
+                            <param id="0" name="Instance variable">maxSize</param>
+                            <param id="1" name="Value">Self.Width</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="380530911652649">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="779506576976364" type="System">
+                            <param id="0" name="Object">UIScaleBars</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="812827024580862" type="UIScaleBars">
+                            <param id="0" name="Instance variable">maxSize</param>
+                            <param id="1" name="Value">Self.Width</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Continue music from main menu</comment>
+        <event-block sid="974845855331269">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="595963189229449" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="271610879087573">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="945488835180031" type="Audio">
+                            <param id="0" name="Tag">&quot;title&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="637702612009693" type="Audio">
+                            <param id="0" name="Audio file">ancient-winds</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;title&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <variable constant="0" name="maxWave" sid="386236718846486" static="0" type="number">5</variable>
+        <variable constant="0" name="timeBetweenSpawn" sid="689524776005510" static="0" type="number">0</variable>
+        <variable constant="0" name="enemiesToSpawn" sid="490457019354786" static="0" type="number">0</variable>
+        <variable constant="0" name="spawnedEnemies" sid="880579255587071" static="0" type="number">0</variable>
+        <variable constant="0" name="isGameOver" sid="132498478831955" static="0" type="number">0</variable>
+        <variable constant="0" name="isEndless" sid="323063662561872" static="0" type="number">0</variable>
+        <variable constant="0" name="increaseWaveSpawn" sid="252782862337239" static="0" type="number">0</variable>
+        <variable constant="1" name="TIME_BEFORE_WAVE" sid="416078742285906" static="0" type="number">12</variable>
+        <variable constant="0" name="timeBeforeNextWave" sid="356518275789483" static="0" type="number">0</variable>
+        <variable constant="0" name="isBetweenWaves" sid="397801157081552" static="0" type="number">0</variable>
+        <event-block sid="497033016617403">
+            <conditions>
+                <condition id="0" name="On completed" sid="149340774597309" type="AJAX">
+                    <param id="0" name="Tag">&quot;Map1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="806423269659911" type="JSON">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="206696436228112">
+                    <conditions>
+                        <condition id="100" name="For each property" sid="133242720428728" type="JSON">
+                            <param id="0" name="Reference point">0</param>
+                            <param id="1" name="Key {n}"></param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="603007876512502" type="System">
+                            <param id="0" name="Variable">maxWave</param>
+                            <param id="1" name="Value">JSON.Value(1,&quot;maxWave&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="470726903401319" type="System">
+                            <param id="0" name="Variable">isEndless</param>
+                            <param id="1" name="Value">JSON.Value(1,&quot;isEndless&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="824892976374612" type="System">
+                            <param id="0" name="Variable">increaseWaveSpawn</param>
+                            <param id="1" name="Value">JSON.Value(1,&quot;IncreseSpawnEachWave&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="966569835464670">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="134154862251992" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="396369083706904" type="Function">
+                            <param id="0" name="Name">&quot;startEvents&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;intro&quot;</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="936776883407091" type="System">
+                            <param id="0" name="Group name">&quot;Pre-Game Start&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="4" name="Preload" sid="728574346775664" type="Audio">
+                            <param id="0" name="Audio file">failing-defense-startBattleLoop</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="Display message boxes during wait times except for first event" sid="756566786120380" title="Story Handler">
+            <sub-events>
+                <event-block sid="657188931688368">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="795051699068698" type="System">
+                            <param id="0" name="First value">currentWave</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="652441959662488">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="791227503732760" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="370153141722559" type="Function">
+                                    <param id="0" name="Name">&quot;startEvents&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;intro&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="369986982639358" type="System">
+                                    <param id="0" name="Group name">&quot;Pre-Game Start&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="114383335502965">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="913400732074631" type="System">
+                            <param id="0" name="First value">isBetweenWaves</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Intro events</comment>
+                        <event-block sid="958639002007070">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="373439011061073" type="System">
+                                    <param id="0" name="First value">currentWave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="408790439625148">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="327409720591061" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="414946795157675" type="Function">
+                                            <param id="0" name="Name">&quot;startEvents&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;nightTime&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="683569821053894">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="887973330586562" type="System">
+                                    <param id="0" name="First value">currentWave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="803869383364546">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="881332334905728" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="693110622877068" type="Function">
+                                            <param id="0" name="Name">&quot;startEvents&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;bossSensed&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="167505207166099">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="404163897697604" type="System">
+                                    <param id="0" name="First value">currentWave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="313922252189290">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="508303411432444" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="517739692056509" type="Function">
+                                            <param id="0" name="Name">&quot;startEvents&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;bossArrived&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="873807285833772" title="Pre-Game Start">
+            <sub-events>
+                <event-block sid="520285633274165">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="242138764582722" type="System" />
+                        <condition id="-14" name="Compare variable" sid="759411849748740" type="System">
+                            <param id="0" name="Variable">dialogueFinished</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="329491619327809" type="Function">
+                            <param id="0" name="Name">&quot;setWave&quot;</param>
+                            <param id="1" name="Parameter {n}">currentWave{###}maxWave</param>
+                        </action>
+                        <action id="0" name="Call function" sid="449261405882323" type="Function">
+                            <param id="0" name="Name">&quot;updateWave&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="176048567577787" type="System">
+                            <param id="0" name="Group name">&quot;Game Over&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="300020863693153" type="System">
+                            <param id="0" name="Group name">&quot;Spawning System&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="717313386343510" type="System">
+                            <param id="0" name="Group name">&quot;Pre-Game Start&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="566495026509560" type="System">
+                            <param id="0" name="Group name">&quot;Music Handler&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <include>sht_UIElements</include>
+        <include>sht_Shop</include>
+        <include>sht_Events</include>
+        <include>sht_Player</include>
+        <include>sht_Tower</include>
+        <include>sht_Enemy</include>
+        <event-group description="" inactive="1" sid="906418127844321" title="Game Over">
+            <sub-events>
+                <event-block any="1" sid="808798540681872">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="421804249723126" type="playableTowers">
+                            <param id="0" name="Instance variable">curHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="543592200125625" type="playableCharacters">
+                            <param id="0" name="Instance variable">curHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="143309478432864" type="System">
+                            <param id="0" name="Variable">isGameOver</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="537243455775782" type="System">
+                            <param id="0" name="Group name">&quot;Game Over Panel&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="584665929224137" type="System">
+                            <param id="0" name="Group name">&quot;Music Handler&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Gameover sound</comment>
+                        <event-block sid="597080077258002">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="603031488619747" type="Audio">
+                                    <param id="0" name="Tag">&quot;Gameover&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="692632551659898" type="Audio" />
+                                <action id="0" name="Play" sid="117666073917194" type="Audio">
+                                    <param id="0" name="Audio file">anxiety</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;Gameover&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="802715335963446">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="538285089965699" type="System">
+                            <param id="0" name="Variable">isGameOver</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="687442604361412" type="System">
+                            <param id="0" name="Group name">&quot;Spawning System&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Since its endless this is useless" inactive="1" sid="518982546951046" title="Victory">
+            <sub-events>
+                <event-block sid="282173645926126">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="545727797731285" type="System">
+                            <param id="0" name="Variable">isEndless</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="589592303717602" type="System">
+                            <param id="0" name="First value">currentWave</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">maxWave</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="769336479068445" type="System">
+                            <param id="0" name="First value">Function.Call(&quot;enemiesStillPresent&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="780618883310635" type="Function">
+                            <param id="0" name="Name">&quot;reachedMaxWave&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="862598093888049" type="System">
+                            <param id="0" name="Group name">&quot;Game Over Panel&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="326240762545029" type="ui_gameOverText">
+                            <param id="0" name="Text">&quot;Victory&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="644021911339679" title="Spawning System">
+            <sub-events>
+                <comment>Spawn Enemies</comment>
+                <event-block sid="510076206747330">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="534927173903132" type="System">
+                            <param id="0" name="First value">enemiesToSpawn</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">spawnedEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="554771358239911">
+                            <conditions>
+                                <condition id="-10" name="For" sid="545957382492984" type="System">
+                                    <param id="0" name="Name">&quot;spawning&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">99</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="861714844546219">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="305424300912818" type="System">
+                                            <param id="0" name="Interval (seconds)">timeBetweenSpawn</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="407221835111873">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="700830396786283" type="obj_spawner">
+                                                    <param id="0" name="Unique ID">38</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="721503488278242" type="Function">
+                                                    <param id="0" name="Name">&quot;findEnemyToSpawn&quot;</param>
+                                                    <param id="1" name="Parameter {n}">1{###}loopindex{###}obj_spawner.X{###}obj_spawner.Y{###}0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="777485926529826">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="215008806100948" type="obj_spawner">
+                                                    <param id="0" name="Unique ID">3</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="873674257710650" type="System">
+                                                    <param id="0" name="First value">enemiesToSpawn</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">spawnedEnemies</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="305373690398347" type="Function">
+                                                    <param id="0" name="Name">&quot;findEnemyToSpawn&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}loopindex{###}obj_spawner.X{###}obj_spawner.Y{###}0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="322423174373364">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="620418109196879" type="obj_spawner">
+                                                    <param id="0" name="Unique ID">98</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="176302498353465" type="System">
+                                                    <param id="0" name="First value">enemiesToSpawn</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">spawnedEnemies</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="985151782596253" type="Function">
+                                                    <param id="0" name="Name">&quot;findEnemyToSpawn&quot;</param>
+                                                    <param id="1" name="Parameter {n}">3{###}loopindex{###}obj_spawner.X{###}obj_spawner.Y{###}0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Spawner Top Right - Should only spawn flyer</comment>
+                                        <event-block sid="889173477764578">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="946248177111361" type="obj_spawner">
+                                                    <param id="0" name="Unique ID">110</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="870120351815215" type="System">
+                                                    <param id="0" name="First value">enemiesToSpawn</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">spawnedEnemies</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="414799549863695" type="Function">
+                                                    <param id="0" name="Name">&quot;findEnemyToSpawn&quot;</param>
+                                                    <param id="1" name="Parameter {n}">4{###}loopindex{###}obj_spawner.X{###}obj_spawner.Y{###}1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Spawner Below Right - Should only spawn flyer</comment>
+                                        <event-block sid="730793603293504">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="361469751048706" type="obj_spawner">
+                                                    <param id="0" name="Unique ID">111</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="645921683146851" type="System">
+                                                    <param id="0" name="First value">enemiesToSpawn</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">spawnedEnemies</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="589093882694414" type="Function">
+                                                    <param id="0" name="Name">&quot;findEnemyToSpawn&quot;</param>
+                                                    <param id="1" name="Parameter {n}">5{###}loopindex{###}obj_spawner.X{###}obj_spawner.Y{###}1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Advance wave if all enemies are spawned and no enemy is present</comment>
+                <event-block sid="759875603916569">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="319995364002029" type="System">
+                            <param id="0" name="Variable">spawnedEnemies</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">enemiesToSpawn</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="925774462161497" type="System">
+                            <param id="0" name="Variable">enemiesToSpawn</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="865380839513754">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="102752819064806" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;enemiesStillPresent&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="522913132164043" type="Function">
+                                    <param id="0" name="Name">&quot;startTime&quot;</param>
+                                    <param id="1" name="Parameter {n}">TIME_BEFORE_WAVE</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="332961389318330">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="370984489359582" type="System">
+                                            <param id="0" name="Variable">isEndless</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="252637541897465" type="System">
+                                            <param id="0" name="First value">currentWave</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">maxWave</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="409135968709474" type="System">
+                                            <param id="0" name="First value">spawnedEnemies</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" sid="378919373746058" type="System">
+                                            <param id="0" name="Group name">&quot;Victory&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Restore Tower Shield</comment>
+                                <event-block sid="681093405909491">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="170198444668228" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="346257470222401" type="playableTowers">
+                                            <param id="0" name="Instance variable">curHealth</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="356291823957666" type="Function">
+                                            <param id="0" name="Name">&quot;restoreShield&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="852539077338139">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="799502819100715" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="962941847217203" type="Function">
+                            <param id="0" name="Name">&quot;setEnemyCount&quot;</param>
+                            <param id="1" name="Parameter {n}">spawnedEnemies{###}enemiesToSpawn</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Shifts between 3 types of music based on Tower/Mage health and between waves." inactive="1" sid="222094800932858" title="Music Handler">
+            <sub-events>
+                <comment>start sound</comment>
+                <event-block sid="471655162582693">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="265638887278742" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="305452159321662" type="Audio" />
+                        <action id="4" name="Preload" sid="985476179082497" type="Audio">
+                            <param id="0" name="Audio file">failing-defense-battleLoop</param>
+                        </action>
+                        <action id="4" name="Preload" sid="334731659133600" type="Audio">
+                            <param id="0" name="Audio file">failing-defense-waiting</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>music to play in between</comment>
+                <event-block sid="757129963349833">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="170934219626819" type="System">
+                            <param id="0" name="Variable">isBetweenWaves</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="948388784259794">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="278887489647824" type="Audio">
+                                    <param id="0" name="Tag">&quot;waitingLoop&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="690325695332667" type="Audio">
+                                    <param id="0" name="Tag">&quot;battleLoop&quot;</param>
+                                </action>
+                                <action id="6" name="Stop" sid="471360620915701" type="Audio">
+                                    <param id="0" name="Tag">&quot;dangerLoop&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="541509909651212" type="Audio">
+                                    <param id="0" name="Audio file">failing-defense-waiting</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">musVolume -10</param>
+                                    <param id="1" name="Tag (optional)">&quot;waitingLoop&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="473767436872144">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="477118929821570" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="356210539754676">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="892051912209255" type="playableTowers">
+                                    <param id="0" name="Instance variable">curArmor</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="848640749853180" type="playableCharacters">
+                                    <param id="0" name="Instance variable">curHealth</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">Self.maxHealth / 2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="972562016133749">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="555963494474996" type="playableTowers">
+                                            <param id="0" name="Instance variable">curHealth</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">Self.maxHealth / 2</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="809615318047517" type="playableCharacters">
+                                            <param id="0" name="Instance variable">curHealth</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">Self.maxHealth / 2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>music in danger</comment>
+                                        <event-block sid="423920014817952">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="464698365959465" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="33" name="Stop all" sid="871040353118746" type="Audio" />
+                                                <action id="0" name="Play" sid="601533764177479" type="Audio">
+                                                    <param id="0" name="Audio file">failing-defense-startDangerLoop</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">musVolume -10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;startDanger&quot;</param>
+                                                </action>
+                                                <action id="4" name="Preload" sid="711081623677775" type="Audio">
+                                                    <param id="0" name="Audio file">failing-defense-dangerLoop</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="501330147556927">
+                                            <conditions>
+                                                <condition id="0" name="On ended" sid="304442721903718" type="Audio">
+                                                    <param id="0" name="Tag">&quot;startDanger&quot;</param>
+                                                </condition>
+                                                <condition id="5" inverted="1" name="Is tag playing" sid="263446860079341" type="Audio">
+                                                    <param id="0" name="Tag">&quot;startDanger&quot;</param>
+                                                </condition>
+                                                <condition id="5" inverted="1" name="Is tag playing" sid="554929422417828" type="Audio">
+                                                    <param id="0" name="Tag">&quot;dangerLoop&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="33" name="Stop all" sid="542923178300845" type="Audio" />
+                                                <action id="0" name="Play" sid="708226370293140" type="Audio">
+                                                    <param id="0" name="Audio file">failing-defense-dangerLoop</param>
+                                                    <param id="2" name="Loop">1</param>
+                                                    <param id="3" name="Volume">musVolume -10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;dangerLoop&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="738086144046474">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="269125580658626" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>start music</comment>
+                                <event-block sid="480102140101120">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="342316688053384" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="630377137083027" type="Audio">
+                                            <param id="0" name="Audio file">failing-defense-startBattleLoop</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">musVolume -10</param>
+                                            <param id="1" name="Tag (optional)">&quot;startBattle&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>battle Loop after start and succeeding</comment>
+                                <event-block sid="499620407828883">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="362472984060628" type="Audio">
+                                            <param id="0" name="Tag">&quot;battleLoop&quot;</param>
+                                        </condition>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="830828471609435" type="Audio">
+                                            <param id="0" name="Tag">&quot;startBattle&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="33" name="Stop all" sid="578397553305397" type="Audio" />
+                                        <action id="0" name="Play" sid="212818126431844" type="Audio">
+                                            <param id="0" name="Audio file">failing-defense-battleLoop</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">musVolume -10</param>
+                                            <param id="1" name="Tag (optional)">&quot;battleLoop&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="For both tower and player" sid="190763136070619" title="Low Health Alert">
+            <sub-events>
+                <event-block any="1" sid="836571848838162">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="376216013578545" type="playableTowers">
+                            <param id="0" name="Instance variable">curArmor</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="697345279324198" type="playableCharacters">
+                            <param id="0" name="Instance variable">curHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">Self.maxHealth / 3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="159762829309411">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="933125203004348" type="playableTowers">
+                                    <param id="0" name="Instance variable">maxHealth</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">Self.maxHealth / 3</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="357657883000539" type="playableCharacters">
+                                    <param id="0" name="Instance variable">curHealth</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">Self.maxHealth / 3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="891757491876891">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="900235648725718" type="System">
+                                            <param id="0" name="First value">isBetweenWaves</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="401566723553342">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="718394749200066" type="System">
+                                                    <param id="0" name="Interval (seconds)">1.5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="873781523299651" type="Audio">
+                                                    <param id="0" name="Audio file">lowHealthAlert</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-20</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="977072762483136">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="490237876187082" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="129662901814408">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="859602469105471" type="System">
+                                                    <param id="0" name="Interval (seconds)">2.5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="686492465666082" type="Audio">
+                                                    <param id="0" name="Audio file">lowHealthAlert</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-20</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="798641795313023">
+            <conditions>
+                <condition id="0" name="On function" sid="231123581978788" type="Function">
+                    <param id="0" name="Name">&quot;updateWave&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="885924714560327">
+                    <conditions>
+                        <condition id="100" name="For each property" sid="942808408935403" type="JSON">
+                            <param id="0" name="Reference point">0</param>
+                            <param id="1" name="Key {n}"></param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="186065376896648">
+                            <conditions>
+                                <condition id="100" name="For each property" sid="399229957363859" type="JSON">
+                                    <param id="0" name="Reference point">1</param>
+                                    <param id="1" name="Key {n}">&quot;waves&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="498398961029189">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="506991819778320" type="System">
+                                            <param id="0" name="Variable">isEndless</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="168316945147129">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="845641429925289" type="System">
+                                                    <param id="0" name="First value">JSON.Value(1, &quot;wave&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">currentWave</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="807385219645097" type="System">
+                                                    <param id="0" name="Variable">enemiesToSpawn</param>
+                                                    <param id="1" name="Value">JSON.Value(1, &quot;numberToSpawn&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="386096228983772" type="System">
+                                                    <param id="0" name="Variable">timeBetweenSpawn</param>
+                                                    <param id="1" name="Value">JSON.Value(1, &quot;timeBetweenSpawn&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="927935045778206">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="465436605133468" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="912243523562224">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="925422178962231" type="System">
+                                                    <param id="0" name="First value">JSON.Value(1, &quot;wave&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="782963829249984" type="System">
+                                                    <param id="0" name="Variable">enemiesToSpawn</param>
+                                                    <param id="1" name="Value">JSON.Value(1, &quot;numberToSpawn&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="892607165409903" type="System">
+                                                    <param id="0" name="Variable">enemiesToSpawn</param>
+                                                    <param id="1" name="Value">enemiesToSpawn + (increaseWaveSpawn * currentWave)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="259376428947026" type="System">
+                                                    <param id="0" name="Variable">timeBetweenSpawn</param>
+                                                    <param id="1" name="Value">JSON.Value(1, &quot;timeBetweenSpawn&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="789257869641302">
+            <conditions>
+                <condition id="0" name="On function" sid="471063508828538" type="Function">
+                    <param id="0" name="Name">&quot;enemiesStillPresent&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="144174416137360">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="195873665524044" type="enemyMinions" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="738847463935264" type="enemyMinions">
+                            <param id="0" name="Instance variable">notActuallyEnemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="412683019924732" type="Function">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="413312797920410">
+            <conditions>
+                <condition id="0" name="On function" sid="134422448082402" type="Function">
+                    <param id="0" name="Name">&quot;reachedMaxWave&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="666257805641012">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="873493953539946" type="Audio">
+                            <param id="0" name="Tag">&quot;winSong&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="797644963742396">
+            <conditions>
+                <condition id="0" name="On function" sid="766838158744810" type="Function">
+                    <param id="0" name="Name">&quot;findEnemyToSpawn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="304216365800250">
+                    <conditions>
+                        <condition id="100" name="For each property" sid="312614035452541" type="JSON">
+                            <param id="0" name="Reference point">0</param>
+                            <param id="1" name="Key {n}"></param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="461571466942199">
+                            <conditions>
+                                <condition id="100" name="For each property" sid="507328243000394" type="JSON">
+                                    <param id="0" name="Reference point">1</param>
+                                    <param id="1" name="Key {n}">&quot;waves&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="244840333461491">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="179264695057058" type="System">
+                                            <param id="0" name="Variable">isEndless</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="192647410990092">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="915789545508628" type="System">
+                                                    <param id="0" name="First value">JSON.Value(1, &quot;wave&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">currentWave</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="321100735011576">
+                                                    <conditions>
+                                                        <condition id="100" name="For each property" sid="696649229959489" type="JSON">
+                                                            <param id="0" name="Reference point">1</param>
+                                                            <param id="1" name="Key {n}">&quot;spawner&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="463074290227180">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="457041607338414" type="System">
+                                                                    <param id="0" name="First value">JSON.Value(1, &quot;id&quot;)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">Function.Param(0)</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="566435187060205" type="Function">
+                                                                    <param id="0" name="Name">&quot;spawnEnemy&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">JSON.Value(1, &quot;type&quot;, Function.Param(1) ){###}Function.Param(0){###}Function.Param(2){###}Function.Param(3){###}JSON.Value(1, &quot;target&quot;){###}Function.Param(4)</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="454223966437156">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="160782104245553" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="471538711951299">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="751573953051263" type="System">
+                                                    <param id="0" name="First value">JSON.Value(1, &quot;wave&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="675492301609691">
+                                                    <conditions>
+                                                        <condition id="100" name="For each property" sid="649660862460897" type="JSON">
+                                                            <param id="0" name="Reference point">1</param>
+                                                            <param id="1" name="Key {n}">&quot;spawner&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="703612920213791">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="878574453947655" type="System">
+                                                                    <param id="0" name="First value">JSON.Value(1, &quot;id&quot;)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">Function.Param(0)</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="234522515666189" type="Function">
+                                                                    <param id="0" name="Name">&quot;spawnEnemy&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">JSON.Value(1, &quot;type&quot;, Function.Param(1) ){###}Function.Param(0){###}Function.Param(2){###}Function.Param(3){###}JSON.Value(1, &quot;target&quot;){###}Function.Param(4)</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="249646800022098">
+            <conditions>
+                <condition id="0" name="On function" sid="290233246935927" type="Function">
+                    <param id="0" name="Name">&quot;spawnEnemy&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="521604843050855">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="643649852872796" type="System">
+                            <param id="0" name="Variable">isEndless</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="511492334627623">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="906727984666457" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="446512895112614" type="System">
+                                    <param id="0" name="Object to create">obj_enemyMelee</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">Function.Param(2)</param>
+                                    <param id="3" name="Y">Function.Param(3)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="430442779066162" type="obj_enemyMelee">
+                                    <param id="0" name="Instance variable">pathToFollow</param>
+                                    <param id="1" name="Value">Function.Param(4)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="783581538313329">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="546866214725154" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="659292025253952" type="System">
+                                    <param id="0" name="Object to create">obj_enemyRanged</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">Function.Param(2)</param>
+                                    <param id="3" name="Y">Function.Param(3)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="475846892823850" type="obj_enemyRanged">
+                                    <param id="0" name="Instance variable">pathToFollow</param>
+                                    <param id="1" name="Value">Function.Param(4)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="907375629096367">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="652512735069855" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="195437824696822" type="System">
+                                    <param id="0" name="Object to create">obj_enemyTank</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">Function.Param(2)</param>
+                                    <param id="3" name="Y">Function.Param(3)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="592968177361703" type="obj_enemyTank">
+                                    <param id="0" name="Instance variable">pathToFollow</param>
+                                    <param id="1" name="Value">Function.Param(4)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="305857771413658">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="953750694005537" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="749993114184088" type="System">
+                                    <param id="0" name="Object to create">obj_enemyFlyer</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">Function.Param(2)</param>
+                                    <param id="3" name="Y">Function.Param(3)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="949804575927851" type="obj_enemyFlyer">
+                                    <param id="0" name="Instance variable">pathToFollow</param>
+                                    <param id="1" name="Value">Function.Param(4)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="464752469705029">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="645633851687953" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="875908386010524" type="System">
+                                    <param id="0" name="Object to create">obj_enemyCatapult</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">Function.Param(2)</param>
+                                    <param id="3" name="Y">Function.Param(3)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="113918039301563" type="obj_enemyCatapult">
+                                    <param id="0" name="Instance variable">pathToFollow</param>
+                                    <param id="1" name="Value">Function.Param(4)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="921966403484337">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="131890656958886" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="291497816968131">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="709019300052175" type="System">
+                                    <param id="0" name="First value">Function.Param(5)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="randomEnemy" sid="556894270025916" static="0" type="number">0</variable>
+                                <variable constant="0" name="randomPath" sid="890513719443877" static="0" type="number">0</variable>
+                                <variable constant="0" name="randomEnemyMax" sid="105399854851255" static="0" type="number">0</variable>
+                                <event-block sid="306190734972098">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="258824081763654" type="System">
+                                            <param id="0" name="Variable">randomEnemyMax</param>
+                                            <param id="1" name="Value">currentWave</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="515378749865814">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="593364850257272" type="System">
+                                                    <param id="0" name="First value">randomEnemyMax</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="297479305765717" type="System">
+                                                    <param id="0" name="Variable">randomEnemyMax</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="660698461290311">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="393600886865323" type="System">
+                                                    <param id="0" name="Variable">randomEnemy</param>
+                                                    <param id="1" name="Value">floor(random(0, randomEnemyMax))</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="787260502164334" type="System">
+                                                    <param id="0" name="Variable">randomPath</param>
+                                                    <param id="1" name="Value">round(random(1, 3))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="161580134043922">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="367702152673905" type="System">
+                                            <param id="0" name="First value">randomEnemy</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="562445646414905" type="System">
+                                            <param id="0" name="Object to create">obj_enemyMelee</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">Function.Param(2)</param>
+                                            <param id="3" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="740198578407959" type="obj_enemyMelee">
+                                            <param id="0" name="Instance variable">pathToFollow</param>
+                                            <param id="1" name="Value">randomPath</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="841576756871624" type="System">
+                                            <param id="0" name="Variable">spawnedEnemies</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="876415413075486">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="180495232191967" type="System">
+                                            <param id="0" name="First value">randomEnemy</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="760018118421125" type="System">
+                                            <param id="0" name="First value">currentWave</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="219478344275667" type="System">
+                                            <param id="0" name="Object to create">obj_enemyRanged</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">Function.Param(2)</param>
+                                            <param id="3" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="964685594805208" type="obj_enemyRanged">
+                                            <param id="0" name="Instance variable">pathToFollow</param>
+                                            <param id="1" name="Value">randomPath</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="923192257181355" type="System">
+                                            <param id="0" name="Variable">spawnedEnemies</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="695428809905297">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="523567801871333" type="System">
+                                            <param id="0" name="First value">randomEnemy</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="212453377164429" type="System">
+                                            <param id="0" name="First value">currentWave</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="374420262374036" type="System">
+                                            <param id="0" name="Object to create">obj_enemyTank</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">Function.Param(2)</param>
+                                            <param id="3" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="212790330025987" type="obj_enemyTank">
+                                            <param id="0" name="Instance variable">pathToFollow</param>
+                                            <param id="1" name="Value">randomPath</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="502283951335144" type="System">
+                                            <param id="0" name="Variable">spawnedEnemies</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="877180722837995">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="722046897102359" type="System">
+                                            <param id="0" name="First value">randomEnemy</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="852662045748908" type="System">
+                                            <param id="0" name="First value">currentWave</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="985647973697434" type="System">
+                                            <param id="0" name="Object to create">obj_enemyFlyer</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">Function.Param(2)</param>
+                                            <param id="3" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="459243944783865" type="obj_enemyFlyer">
+                                            <param id="0" name="Instance variable">pathToFollow</param>
+                                            <param id="1" name="Value">randomPath</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="351305503159945" type="System">
+                                            <param id="0" name="Variable">spawnedEnemies</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="314323548374000">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="700922274688555" type="System">
+                                            <param id="0" name="First value">randomEnemy</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="219587206510500" type="System">
+                                            <param id="0" name="First value">currentWave</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="816290365927337" type="System">
+                                            <param id="0" name="Object to create">obj_enemyCatapult</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">Function.Param(2)</param>
+                                            <param id="3" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="635532804489393" type="obj_enemyCatapult">
+                                            <param id="0" name="Instance variable">pathToFollow</param>
+                                            <param id="1" name="Value">randomPath</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="173422418811597" type="System">
+                                            <param id="0" name="Variable">spawnedEnemies</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="653943790048819">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="543373884786910" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="589925480834215">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="180695712566337" type="System">
+                                            <param id="0" name="First value">currentWave</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="816002593477905" type="System">
+                                            <param id="0" name="Object to create">obj_enemyFlyer</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">Function.Param(2)</param>
+                                            <param id="3" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="235392836681404" type="obj_enemyFlyer">
+                                            <param id="0" name="Instance variable">pathToFollow</param>
+                                            <param id="1" name="Value">round(random(4, 5))</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="601283576281222" type="System">
+                                            <param id="0" name="Variable">spawnedEnemies</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="172835433257209">
+            <conditions>
+                <condition id="0" name="On function" sid="561415069419571" type="Function">
+                    <param id="0" name="Name">&quot;startTime&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Wait for the dialogue to finish before starting the timer</comment>
+                <variable constant="0" name="willStart" sid="339043546120768" static="0" type="number">0</variable>
+                <event-block sid="577761925728550">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="619477628226344" type="System">
+                            <param id="0" name="Variable">dialogueFinished</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="720405191660853">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="247430485453995" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="547650624900597" type="Function">
+                                    <param id="0" name="Name">&quot;setTimerVisibility&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                                <action disabled="1" id="0" name="Call function" sid="659153030221044" type="Function">
+                                    <param id="0" name="Name">&quot;checkNightDayCycle&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="750629824573351" type="System">
+                                    <param id="0" name="Variable">timeBeforeNextWave</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="369386668306010" type="System">
+                                    <param id="0" name="Variable">isBetweenWaves</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="933552641689012">
+                            <conditions />
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="129768401789478" type="System">
+                                    <param id="0" name="Variable">timeBeforeNextWave</param>
+                                    <param id="1" name="Value">1 * dt</param>
+                                </action>
+                                <action id="0" name="Call function" sid="645429718676610" type="Function">
+                                    <param id="0" name="Name">&quot;setTimerText&quot;</param>
+                                    <param id="1" name="Parameter {n}">ceil(timeBeforeNextWave)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="857391896061149">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="864658307975754" type="System">
+                                    <param id="0" name="Variable">timeBeforeNextWave</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="508661614035700" type="System">
+                                    <param id="0" name="Variable">willStart</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="265810723858358">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="621249295633480" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="809127566490358" type="System">
+                                    <param id="0" name="Variable">willStart</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="324165904578851">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="969057012933098" type="System">
+                                    <param id="0" name="Variable">willStart</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="528764493448212" type="System">
+                                    <param id="0" name="Variable">currentWave</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="997104917527379" type="Function">
+                                    <param id="0" name="Name">&quot;updateWave&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="417765447206407" type="System">
+                                    <param id="0" name="Variable">spawnedEnemies</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="895839300162640" type="Function">
+                                    <param id="0" name="Name">&quot;setTimerVisibility&quot;</param>
+                                    <param id="1" name="Parameter {n}">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="561073052912963" type="System">
+                                    <param id="0" name="Variable">isBetweenWaves</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="400695675979551" title="Reset">
+            <sub-events>
+                <event-block sid="542969929703424">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="694542462030919" type="btn_reset" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="777181395507355" type="Function">
+                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="200455455514085">
+                    <conditions>
+                        <condition id="0" name="On function" sid="960824292329568" type="Function">
+                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="812046704852536">
+                            <conditions />
+                            <actions>
+                                <action id="-26" name="Restart layout" sid="880488001614373" type="System" />
+                                <action id="-21" name="Reset global variables" sid="399551091112871" type="System" />
+                                <action id="-45" name="Reset persisted objects" sid="413970139761060" type="System" />
+                                <action id="-4" name="Set layer visible" sid="833848896804846" type="System">
+                                    <param id="0" name="Layer">&quot;GameOver&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="843487714574403" type="System">
+                                    <param id="0" name="Variable">currentWave</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="188870025746112" type="System">
+                                    <param id="0" name="Variable">spawnedEnemies</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="33" name="Stop all" sid="652883044582579" type="Audio" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

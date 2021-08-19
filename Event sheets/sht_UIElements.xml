@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sht_UIElements</name>
+    <events>
+        <event-block sid="937543098122429">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="259055385414987" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="100885541001410" type="System">
+                    <param id="0" name="Group name">&quot;UI Tweening Start&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="497295179986166" type="System">
+                    <param id="0" name="Group name">&quot;Game Over Panel&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="772535941902857" type="allTexts">
+                    <param id="0" name="Family name">&quot;tight_pixelregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="626153176672624">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="267816117470261" type="ui_frame">
+                            <param id="0" name="Unique ID">142</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="349008556596964" type="ui_frame">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.1)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, -0.1)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="249532486365151" type="ui_goldBar">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.9)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, -0.05)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="100330074885932" type="ui_bottomPanels">
+                            <param id="0" name="X">Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.5)</param>
+                            <param id="1" name="Y">Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 1.12)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="285942986790429" title="UI Tween Initialize">
+            <sub-events>
+                <event-block sid="861691875160300">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="978324420423609" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="386667218158027" type="Function">
+                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                            <param id="1" name="Parameter {n}">142{###}Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.1){###}Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, 0.1){###}1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="482677932288539" type="Function">
+                            <param id="0" name="Name">&quot;setSpriteTween&quot;</param>
+                            <param id="1" name="Parameter {n}">137{###}Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.9){###}Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, 0.05){###}1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="171089586795767" type="Function">
+                            <param id="0" name="Name">&quot;setSpriteTween&quot;</param>
+                            <param id="1" name="Parameter {n}">80{###}Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.5){###}Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, 0.87){###}1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="793278386231581" title="UI Tweening Start">
+            <sub-events>
+                <event-block sid="252925691569301">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="769467244653601" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="559794437375425" type="Function">
+                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                            <param id="1" name="Parameter {n}">142</param>
+                        </action>
+                        <action id="0" name="Call function" sid="452183509354633" type="Function">
+                            <param id="0" name="Name">&quot;startSpriteTween&quot;</param>
+                            <param id="1" name="Parameter {n}">137</param>
+                        </action>
+                        <action id="0" name="Call function" sid="525945897623801" type="Function">
+                            <param id="0" name="Name">&quot;startSpriteTween&quot;</param>
+                            <param id="1" name="Parameter {n}">80</param>
+                        </action>
+                        <action id="0" name="Call function" sid="865093938625807" type="Function">
+                            <param id="0" name="Name">&quot;enablePlayerAttack&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="920752548172280" title="Floating Enemy Health Bar">
+            <sub-events>
+                <event-block sid="446641707253332">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="868789428727474" type="enemyMinions">
+                            <param id="0" name="Instance variable">curHealth</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">Self.maxHealth</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="745499644239503" type="enemyMinions">
+                            <param id="0" name="Instance variable">isHealthShown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="582477308327285" type="System">
+                            <param id="0" name="Object to create">ui_floatingHealthBar</param>
+                            <param id="1" name="Layer">(&quot;Game&quot;)</param>
+                            <param id="2" name="X">enemyMinions.X</param>
+                            <param id="3" name="Y">enemyMinions.Y</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="599879656601511" type="ui_floatingHealthBar">
+                            <param id="0" name="Width">enemyMinions.Width</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="401495149117783" type="ui_floatingHealthBar">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Value">enemyMinions.UID</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="143124282106179" type="enemyMinions">
+                            <param id="0" name="Instance variable">isHealthShown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="774372953789621">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="680421478921811" type="System">
+                            <param id="0" name="Object">ui_floatingHealthBar</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="917461583548373" type="enemyMinions">
+                            <param id="0" name="Unique ID">ui_floatingHealthBar.id</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="330306330577941" type="ui_floatingHealthBar">
+                            <param id="0" name="X">enemyMinions.X - (enemyMinions.Width/2)</param>
+                            <param id="1" name="Y">enemyMinions.Y - (enemyMinions.Height/2) - 20</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="635699894112361" type="ui_floatingHealth">
+                            <param id="0" name="X">enemyMinions.X - (enemyMinions.Width/2)</param>
+                            <param id="1" name="Y">enemyMinions.Y - (enemyMinions.Height/2) - 20</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="723696228425682" type="ui_floatingHealth">
+                            <param id="0" name="Width">enemyMinions.Width * (enemyMinions.curHealth / enemyMinions.maxHealth)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="541552637819519">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="940992187437545" type="enemyMinions" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="899561269523855">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="500761791393905" type="System">
+                                    <param id="0" name="Object">ui_floatingHealthBar</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="849725508870028" type="enemyMinions">
+                                    <param id="0" name="Instance variable">isHealthShown</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="103803424521763" type="enemyMinions">
+                                    <param id="0" name="Unique ID">ui_floatingHealthBar.id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="668951464331530" type="ui_floatingHealthBar" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Gold popup when enemy is killed, fades away</comment>
+        <event-block sid="161362058858114">
+            <conditions>
+                <condition id="-11" name="For Each" sid="321213085295349" type="System">
+                    <param id="0" name="Object">ui_getGoldPopup</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="626114420628440" type="ui_getGoldPopup">
+                    <param id="0" name="X">Self.X</param>
+                    <param id="1" name="Y">Self.Y - (20 * dt)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="241955171807293" type="ui_getGoldPopup">
+                    <param id="0" name="Opacity">Self.Opacity - (100 * dt)</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="693240167846634" type="ui_getGoldPopupText">
+                    <param id="0" name="Object">ui_getGoldPopup</param>
+                    <param id="1" name="Image point (optional)">&quot;goldText&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="427088957122893" type="ui_getGoldPopupText">
+                    <param id="0" name="Opacity">Self.Opacity - (100 * dt)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="424718323577079">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="305396752900992" type="ui_getGoldPopup">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Opacity">20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="753587359099411" type="ui_getGoldPopup" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="652611002041391" title="Player Equipped Items">
+            <sub-events>
+                <event-block sid="722542421550410">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="870214890599358" type="playableCharacters">
+                            <param id="0" name="Instance variable">equipped_1_slot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="626487205829059" type="ui_item1">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="590527737430543">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="214138551463144" type="playableCharacters">
+                            <param id="0" name="Instance variable">equipped_2_slot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="869262441627557" type="ui_item2">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="763807736896590">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="703819702393430" type="playableCharacters">
+                            <param id="0" name="Instance variable">equipped_3_slot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="519093912161552" type="ui_item3">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="360120771820858">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="156646951232756" type="playableCharacters">
+                            <param id="0" name="Instance variable">equipped_4_slot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="491452128918759" type="ui_item4">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="650564292141374">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="835747184800904" type="playableCharacters">
+                            <param id="0" name="Instance variable">equipped_5_slot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="351320551946339" type="ui_item5">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="168680304937588" title="Upper UI Panel">
+            <sub-events>
+                <variable constant="0" name="UI_Health_Offset" sid="651879584330945" static="0" type="number">20</variable>
+                <event-block sid="648723554365378">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="476175622132200" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="178963109122699" type="ui_scoreValue">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; playableCharacters.totalScore</param>
+                        </action>
+                        <action id="0" name="Set text" sid="144306541428373" type="ui_goldValue">
+                            <param id="0" name="Text">currentGold</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="465972382600533" type="ui_goldValue">
+                            <param id="0" name="Object">ui_goldBar</param>
+                            <param id="1" name="Image point (optional)">&quot;Text&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="607980518293792" type="ui_towerHealth">
+                            <param id="0" name="X">playableTowers.X </param>
+                            <param id="1" name="Y">playableTowers.Y + (playableTowers.Height/2) + UI_Health_Offset</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="871916918309832" type="ui_towerArmor">
+                            <param id="0" name="X">playableTowers.X </param>
+                            <param id="1" name="Y">playableTowers.Y + (playableTowers.Height/2) + 10 + UI_Health_Offset</param>
+                        </action>
+                        <action id="0" name="Call function" sid="212841024935360" type="Function">
+                            <param id="0" name="Name">&quot;setWave&quot;</param>
+                            <param id="1" name="Parameter {n}">currentWave{###}maxWave</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="429683341253422">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="705653192506674" type="ui_frame">
+                                    <param id="0" name="Unique ID">142</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="959769046639655" type="ui_waveEnemy">
+                                    <param id="0" name="X">ui_frame.X</param>
+                                    <param id="1" name="Y">ui_frame.Y - (ui_frame.Height / 4)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="647674495872042" type="ui_waveCount">
+                                    <param id="0" name="X">ui_frame.X</param>
+                                    <param id="1" name="Y">ui_frame.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="474988045929106" type="ui_enemyCount">
+                                    <param id="0" name="X">ui_frame.X</param>
+                                    <param id="1" name="Y">ui_frame.Y + (ui_frame.Height / 4) + 5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="223869464830050">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="510958649166593" type="ui_frame">
+                                    <param id="0" name="Unique ID">178</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="526173476392839" type="ui_timerCountText">
+                                    <param id="0" name="X">ui_frame.X</param>
+                                    <param id="1" name="Y">ui_frame.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="999736387680985" title="Bottom UI Panel">
+            <sub-events>
+                <event-block sid="420223356150583">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="295958972512885" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="908283922868842" type="ui_playerLevel">
+                            <param id="0" name="Text">&quot;Level: &quot; &amp; playableCharacters.curLevel</param>
+                        </action>
+                        <action id="0" name="Set text" sid="728837281272104" type="ui_textHealth">
+                            <param id="0" name="Text">floor(playableCharacters.curHealth) &amp; &quot;/&quot; &amp; playableCharacters.maxHealth</param>
+                        </action>
+                        <action id="0" name="Set text" sid="653659225082686" type="ui_playerAADamage">
+                            <param id="0" name="Text">&quot;Atk: &quot; &amp; playerDictionary.Get(&quot;autoDamage&quot;)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="837092056897383" type="ui_playerAASpeed">
+                            <param id="0" name="Text">&quot;Spd: &quot; &amp; playerDictionary.Get(&quot;autoCooldown&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="173338472057654">
+                    <conditions />
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="233440322229079" type="ui_portraitMage">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;portrait&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="787963973588463" type="ui_laserIcon">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;skill1&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="659698296999453" type="ui_frameSkill1">
+                            <param id="0" name="Object">ui_laserIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="804733025403171" type="ui_blinkIcon">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;skill2&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="654255135616983" type="ui_frameSkill2">
+                            <param id="0" name="Object">ui_blinkIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="506607469268533" type="ui_stunIcon">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;skill3&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="141350220024030" type="ui_frameSkill3">
+                            <param id="0" name="Object">ui_stunIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="669392631585757" type="ui_fireBallIcon">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;skill4&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="318221293270759" type="ui_frameSkill4">
+                            <param id="0" name="Object">ui_fireBallIcon</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="842763875386434" type="ui_health">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;healthbar&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="367525252069806" type="ui_textHealth">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;healthbar&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="438182053973482">
+                    <conditions />
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="121224513408540" type="ui_item1">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;item1&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="948181198914246" type="ui_equipmentFrame1">
+                            <param id="0" name="Object">ui_item1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="642586952377538" type="ui_item2">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;item2&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="855165371743150" type="ui_equipmentFrame2">
+                            <param id="0" name="Object">ui_item2</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="803895608445684" type="ui_item3">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;item3&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="986600755669139" type="ui_equipmentFrame3">
+                            <param id="0" name="Object">ui_item3</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="146315881575540" type="ui_item4">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;item4&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="873509177921367" type="ui_equipmentFrame4">
+                            <param id="0" name="Object">ui_item4</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="682761273259970" type="ui_item5">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;item5&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="590292179825694" type="ui_equipmentFrame5">
+                            <param id="0" name="Object">ui_item5</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="193568033003099" type="ui_shopIcon">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;shop&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="869293796217290" type="ui_playerLevel">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;statLevel&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="919431982180803" type="ui_playerAADamage">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;statAttack&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="635265738864899" type="ui_playerAASpeed">
+                            <param id="0" name="Object">ui_bottomPanels</param>
+                            <param id="1" name="Image point (optional)">&quot;statSpeed&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="470899509203527">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="503335963878848" type="ui_iconProgress">
+                            <param id="0" name="Unique ID">52</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="732921293229605" type="ui_iconProgress">
+                            <param id="0" name="Object">ui_laserIcon</param>
+                            <param id="1" name="Image point (optional)">&quot;Progress&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="890834931199717">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="713960278488210" type="ui_iconProgress">
+                            <param id="0" name="Unique ID">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="114623730834036" type="ui_iconProgress">
+                            <param id="0" name="Object">ui_blinkIcon</param>
+                            <param id="1" name="Image point (optional)">&quot;Progress&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="676654623610002">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="634633391023839" type="ui_iconProgress">
+                            <param id="0" name="Unique ID">160</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="271551921424430" type="ui_iconProgress">
+                            <param id="0" name="Object">ui_stunIcon</param>
+                            <param id="1" name="Image point (optional)">&quot;Progress&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="380444854238367">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="459741402718555" type="ui_iconProgress">
+                            <param id="0" name="Unique ID">161</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="277519451301798" type="ui_iconProgress">
+                            <param id="0" name="Object">ui_fireBallIcon</param>
+                            <param id="1" name="Image point (optional)">&quot;Progress&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="960863405140940" title="Game Over Panel">
+            <sub-events>
+                <event-block sid="614983494639785">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="561069236025578" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="406436545348089" type="System">
+                            <param id="0" name="Layer">&quot;GameOver&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="currentScore" sid="845728190217356" static="0" type="number">0</variable>
+                        <event-block sid="169263897697879">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="997679327252606" type="System">
+                                    <param id="0" name="Variable">currentScore</param>
+                                    <param id="1" name="Value">currentWave * 500</param>
+                                </action>
+                                <action id="0" name="Set text" sid="445627026514649" type="ui_gameOverScore">
+                                    <param id="0" name="Text">&quot;Wave x 500: &quot; &amp; currentScore</param>
+                                </action>
+                                <action id="25" name="Play at object" sid="188693093098045" type="Audio">
+                                    <param id="0" name="Audio file">Ding Sound Effect</param>
+                                    <param id="1" name="Loop">0</param>
+                                    <param id="2" name="Volume">sfxVolume - 10</param>
+                                    <param id="3" name="Object">enemyMinions</param>
+                                    <param id="4" name="Inner angle">360</param>
+                                    <param id="5" name="Outer angle">360</param>
+                                    <param id="6" name="Outer gain">0</param>
+                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="981001814202089" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="229002333443326" type="System">
+                                    <param id="0" name="Variable">currentScore</param>
+                                    <param id="1" name="Value">currentScore + currentGold</param>
+                                </action>
+                                <action id="0" name="Set text" sid="299945571320803" type="ui_gameOverScore">
+                                    <param id="0" name="Text">&quot;+ Current Gold: &quot; &amp; currentScore</param>
+                                </action>
+                                <action id="25" name="Play at object" sid="361200219737602" type="Audio">
+                                    <param id="0" name="Audio file">Ding Sound Effect</param>
+                                    <param id="1" name="Loop">0</param>
+                                    <param id="2" name="Volume">sfxVolume - 10</param>
+                                    <param id="3" name="Object">enemyMinions</param>
+                                    <param id="4" name="Inner angle">360</param>
+                                    <param id="5" name="Outer angle">360</param>
+                                    <param id="6" name="Outer gain">0</param>
+                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="297895893371193" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="780431815691637" type="System">
+                                    <param id="0" name="Variable">currentScore</param>
+                                    <param id="1" name="Value">currentScore + (enemyKilled * 100)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="755970617581619" type="ui_gameOverScore">
+                                    <param id="0" name="Text">&quot;Enemy Killed x 100: &quot; &amp; currentScore</param>
+                                </action>
+                                <action id="25" name="Play at object" sid="405681770119133" type="Audio">
+                                    <param id="0" name="Audio file">Ding Sound Effect</param>
+                                    <param id="1" name="Loop">0</param>
+                                    <param id="2" name="Volume">sfxVolume - 10</param>
+                                    <param id="3" name="Object">enemyMinions</param>
+                                    <param id="4" name="Inner angle">360</param>
+                                    <param id="5" name="Outer angle">360</param>
+                                    <param id="6" name="Outer gain">0</param>
+                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="710005300536816" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="707345800273846" type="ui_gameOverScore">
+                                    <param id="0" name="Text">&quot;Total Score: &quot; &amp; currentScore</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="368903668252741">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="111898150136870" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="172619482348208" type="ui_restartText">
+                            <param id="0" name="Object">btn_restart1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="352734421112740" type="ui_returnTitleText">
+                            <param id="0" name="Object">btn_returnTitle1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="418097914289454" title="Game Over Buttons">
+                    <sub-events>
+                        <comment>Restart Button</comment>
+                        <event-block sid="803932802036807">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="706227397253293" type="Mouse">
+                                    <param id="0" name="Object">btn_restart1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="382254333771039" type="btn_restart2">
+                                    <param id="0" name="Object">btn_restart1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="583339660634103" type="btn_restart2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_restart1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="190367241544213" type="btn_restart2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="690693777941543">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="509130692492806" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="752857281749569" type="Function">
+                                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="921823239648617">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="143562523531218" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="627438680829890" type="btn_restart2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Return Title</comment>
+                        <event-block sid="995406109004634">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="461357897960742" type="Mouse">
+                                    <param id="0" name="Object">btn_returnTitle1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="539906610874303" type="btn_returnTitle2">
+                                    <param id="0" name="Object">btn_returnTitle1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="925752621042987" type="btn_returnTitle2">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">btn_returnTitle1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="150279738971590" type="btn_returnTitle2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="297138230678031">
+                                    <conditions>
+                                        <condition id="0" name="On click" sid="541866030509051" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="33" name="Stop all" sid="738585406857956" type="Audio" />
+                                        <action id="-2" name="Go to layout" sid="872614977125117" type="System">
+                                            <param id="0" name="Layout">MainMenuMap</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="381777999386834" type="Function">
+                                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="195036580809043">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="193905060722318" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="214567282393899" type="btn_returnTitle2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="111784943979241">
+            <conditions>
+                <condition id="0" name="On function" sid="480429658561637" type="Function">
+                    <param id="0" name="Name">&quot;setWave&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="807582971994839">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="905298376633744" type="System">
+                            <param id="0" name="Variable">isEndless</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="420039878070986" type="ui_waveCount">
+                            <param id="0" name="Text">Function.Param(0) &amp; &quot;/&quot; &amp; Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="248633295861001">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="843333845487218" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="989404481871675" type="ui_waveCount">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="978103440691901">
+            <conditions>
+                <condition id="0" name="On function" sid="282997405743228" type="Function">
+                    <param id="0" name="Name">&quot;setEnemyCount&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="851674186321081">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="241453671326665" type="ui_enemyCount">
+                            <param id="0" name="Text">Function.Param(0) &amp; &quot;/&quot; &amp; Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Return Width based on 0 - 1. ie. 0.5 is center. Hotspot at top-left</comment>
+        <event-block sid="840609490243851">
+            <conditions>
+                <condition id="0" name="On function" sid="745785581666335" type="Function">
+                    <param id="0" name="Name">&quot;relWidth&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="645096499439258">
+                    <conditions />
+                    <actions>
+                        <action id="1" name="Set return value" sid="571264302706239" type="Function">
+                            <param id="0" name="Value">ViewportRight(Function.Param(0)) * Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="973254558952779">
+            <conditions>
+                <condition id="0" name="On function" sid="841827135745725" type="Function">
+                    <param id="0" name="Name">&quot;relHeight&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="656087713411762">
+                    <conditions />
+                    <actions>
+                        <action id="1" name="Set return value" sid="610837497696825" type="Function">
+                            <param id="0" name="Value">ViewportBottom(Function.Param(0)) * Function.Param(1) </param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="110055964134082">
+            <conditions>
+                <condition id="0" name="On function" sid="651394582466266" type="Function">
+                    <param id="0" name="Name">&quot;setTimerVisibility&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="720730948096193">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="118943637406311" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="203676999002677" type="Function">
+                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                            <param id="1" name="Parameter {n}">178{###}Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.3){###}Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, 0.05){###}1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="103093733105737" type="Function">
+                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                            <param id="1" name="Parameter {n}">178</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="866499424527496">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="751054304852396" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="461265145521777" type="Function">
+                            <param id="0" name="Name">&quot;setTween&quot;</param>
+                            <param id="1" name="Parameter {n}">178{###}Function.Call(&quot;relWidth&quot;, &quot;UI&quot;, 0.1){###}Function.Call(&quot;relHeight&quot;, &quot;UI&quot;, 0.05){###}1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="387948729436046" type="Function">
+                            <param id="0" name="Name">&quot;startTween&quot;</param>
+                            <param id="1" name="Parameter {n}">178</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="819218994255869">
+            <conditions>
+                <condition id="0" name="On function" sid="943854230181740" type="Function">
+                    <param id="0" name="Name">&quot;setTimerText&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="172388158834510">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="741088438217316" type="ui_timerCountText">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="560386201726425">
+            <conditions>
+                <condition id="0" name="On function" sid="361099259009968" type="Function">
+                    <param id="0" name="Name">&quot;setTween&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="425553886461655">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="223138033789124" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="559163522504073">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="720973616314294" type="TweenablePatchElements">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween4" id="4" name="Set tweened property" sid="809824747702960" type="TweenablePatchElements">
+                                    <param id="0" name="Tweened property">0</param>
+                                </action>
+                                <action behavior="LiteTween4" id="3" name="Set target" sid="942914195548192" type="TweenablePatchElements">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </action>
+                                <action behavior="LiteTween4" id="3" name="Set target" sid="785002215861990" type="TweenablePatchElements">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">Function.Param(2)</param>
+                                </action>
+                                <action behavior="LiteTween4" id="1" name="Set duration" sid="367760175631769" type="TweenablePatchElements">
+                                    <param id="0" name="Duration">Function.Param(3)</param>
+                                </action>
+                                <action behavior="LiteTween4" id="5" name="Set easing" sid="759231783706641" type="TweenablePatchElements">
+                                    <param id="0" name="Function">15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="473040597918914">
+            <conditions>
+                <condition id="0" name="On function" sid="816390422868970" type="Function">
+                    <param id="0" name="Name">&quot;startTween&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="833341310723766">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="694068322409292" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="603736531665040">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="452659310134612" type="TweenablePatchElements">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween4" id="10" name="Start" sid="221500327297523" type="TweenablePatchElements">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="379463780364129">
+            <conditions>
+                <condition id="0" name="On function" sid="115904477528522" type="Function">
+                    <param id="0" name="Name">&quot;setSpriteTween&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="888790461590144">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="686362388683587" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="900179249082846">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="948552780561871" type="TweenableSpriteElements">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween2" id="4" name="Set tweened property" sid="273061383898815" type="TweenableSpriteElements">
+                                    <param id="0" name="Tweened property">0</param>
+                                </action>
+                                <action behavior="LiteTween2" id="3" name="Set target" sid="588450628742831" type="TweenableSpriteElements">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </action>
+                                <action behavior="LiteTween2" id="3" name="Set target" sid="894533673197337" type="TweenableSpriteElements">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">Function.Param(2)</param>
+                                </action>
+                                <action behavior="LiteTween2" id="1" name="Set duration" sid="993632581096008" type="TweenableSpriteElements">
+                                    <param id="0" name="Duration">Function.Param(3)</param>
+                                </action>
+                                <action behavior="LiteTween2" id="5" name="Set easing" sid="574278668463845" type="TweenableSpriteElements">
+                                    <param id="0" name="Function">15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="948139624770924">
+            <conditions>
+                <condition id="0" name="On function" sid="277751260006636" type="Function">
+                    <param id="0" name="Name">&quot;startSpriteTween&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="768083065898609">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="249725180742089" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="496603724814642">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="718243149463325" type="TweenableSpriteElements">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween2" id="10" name="Start" sid="621411905358795" type="TweenableSpriteElements">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

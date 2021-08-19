@@ -1,0 +1,40 @@
+[
+	{
+		"maxWave": 1,
+		"isEndless": 1,
+		"IncreseSpawnEachWave": 5,
+		"waves": 
+		[
+			{
+				"wave": 1,
+				"numberToSpawn": 5,				
+				"timeBetweenSpawn": 3,	
+				"spawner": 
+				[{ 
+					"id": 1,
+					"target": 1
+				},
+				{
+					"id": 2,
+					"target": 2
+				},
+				{
+					"id": 3,
+					"target": 3
+				},
+				{
+					"id": 4,
+					"target": 4
+				},
+				{
+					"id": 5,
+					"target": 5
+				},
+				{
+					"id": 6,
+					"target": 6
+				}]
+			}
+		]
+    }
+]
